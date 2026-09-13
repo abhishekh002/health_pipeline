@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+
+# Local runtime logs
+*.log
+
+# Local environment files
+.env
+.venv/
+venv/
+
+# Generated PDF reports
+artifacts/reports/*.pdf

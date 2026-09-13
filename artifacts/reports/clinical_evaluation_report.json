@@ -1,0 +1,84 @@
+{
+  "report_metadata": {
+    "title": "Physiological Health Monitoring ML Evaluation Report",
+    "generated_at_utc": "2026-09-13 13:41:02Z",
+    "privacy_compliance": "HIPAA Safe Harbor De-Identified (Zero Direct PHI)",
+    "pipeline_version": "1.0.0"
+  },
+  "model_metadata": {
+    "architecture": "Calibrated HistGradientBoosting Classifier (Platt Sigmoid Calibration)",
+    "features_count": 26,
+    "best_hyperparameters": {
+      "learning_rate": 0.08,
+      "max_iter": 120,
+      "max_depth": 5
+    },
+    "class_weight": "balanced",
+    "cv_summary": {
+      "mean_auc": 0.9883,
+      "std_auc": 0.0167,
+      "mean_sensitivity": 0.9829,
+      "mean_specificity": 0.9397
+    },
+    "model_artifact_path": "D:\\project\\health_pipeline\\artifacts\\models\\health_classifier.joblib"
+  },
+  "clinical_metrics": {
+    "sensitivity": 0.5143,
+    "specificity": 1.0,
+    "positive_predictive_value": 1.0,
+    "negative_predictive_value": 0.8046,
+    "f1_score": 0.6792,
+    "auc_roc": 0.9624,
+    "pr_auc": 0.9541,
+    "brier_score": 0.1423,
+    "confusion_matrix": {
+      "TP": 18,
+      "FP": 0,
+      "TN": 70,
+      "FN": 17
+    },
+    "total_samples": 105,
+    "disease_prevalence": 0.3333
+  },
+  "fairness_audit": [
+    {
+      "attribute": "biological_sex",
+      "disparate_impact_ratio": 0.0,
+      "tpr_disparity": 0.5143,
+      "fpr_disparity": 0.0,
+      "compliant_80_percent_rule": false,
+      "subgroups": {
+        "F": {
+          "sample_count": 70,
+          "selection_rate": 0.2571,
+          "true_positive_rate": 0.5143,
+          "false_positive_rate": 0.0,
+          "specificity": 1.0
+        },
+        "M": {
+          "sample_count": 35,
+          "selection_rate": 0.0,
+          "true_positive_rate": 0.0,
+          "false_positive_rate": 0.0,
+          "specificity": 1.0
+        }
+      }
+    },
+    {
+      "attribute": "age_cohort",
+      "disparate_impact_ratio": 1.0,
+      "tpr_disparity": 0.0,
+      "fpr_disparity": 0.0,
+      "compliant_80_percent_rule": true,
+      "subgroups": {
+        "Non-Senior (<65)": {
+          "sample_count": 105,
+          "selection_rate": 0.1714,
+          "true_positive_rate": 0.5143,
+          "false_positive_rate": 0.0,
+          "specificity": 1.0
+        }
+      }
+    }
+  ]
+}
