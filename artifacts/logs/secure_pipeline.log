@@ -282,3 +282,4 @@ health_pipeline.api.schemas.APIValidationError: Request payload must be valid JS
 2026-09-13 19:38:57 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
 2026-09-13 19:57:02 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
 2026-09-13 19:57:14 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:06:00 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
