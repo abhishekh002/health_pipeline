@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physiological Health Monitoring ML System & Alert Dashboard</title>
+<style>
+  :root {
+    --primary: #0284c7;
+    --primary-dark: #0369a1;
+    --bg: #000000;
+    --surface: #080808;
+    --surface-border: #1c1c1c;
+    --text: #f8fafc;
+    --text-muted: #8892b0;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { background: #000000; color: var(--text); padding: 20px; }
+  
+  /* Top Header */
+  .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--surface-border); padding-bottom: 14px; margin-bottom: 16px; background: #000000; }
+  .title-group h1 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+  .title-group p { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+  .header-actions { display: flex; align-items: center; gap: 12px; }
+  .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; background: rgba(34,197,94,0.12); color: var(--success); border: 1px solid rgba(34,197,94,0.3); }
+  .nav-link { color: #38bdf8; text-decoration: none; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; background: #0f172a; border: 1px solid #1e293b; transition: all 0.2s; }
+  .nav-link:hover { background: #1e293b; border-color: #38bdf8; text-decoration: none; }
+
+  /* Emergency Alert Signal Banner */
+  .alert-signal-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  .alert-signal-bar.NORMAL {
+    background: #021a0d;
+    border-color: rgba(34, 197, 94, 0.4);
+    color: #4ade80;
+  }
+  .alert-signal-bar.MONITOR {
+    background: #241402;
+    border-color: rgba(245, 158, 11, 0.5);
+    color: #fbbf24;
+  }
+  .alert-signal-bar.CRITICAL {
+    background: #260505;
+    border-color: #ef4444;
+    color: #fca5a5;
+    animation: pulse-red-alert 0.9s infinite alternate;
+  }
+  .alert-signal-bar.LEADS_OFF {
+    background: #230d02;
+    border-color: #f97316;
+    color: #fdba74;
+    animation: pulse-amber-alert 1.2s infinite alternate;
+  }
+
+  @keyframes pulse-red-alert {
+    from { box-shadow: 0 0 4px rgba(239, 68, 68, 0.4); transform: scale(1.0); }
+    to { box-shadow: 0 0 18px rgba(239, 68, 68, 0.95); transform: scale(1.008); }
+  }
+  @keyframes pulse-amber-alert {
+    from { box-shadow: 0 0 3px rgba(249, 115, 22, 0.3); }
+    to { box-shadow: 0 0 14px rgba(249, 115, 22, 0.8); }
+  }
+
+  /* Hardware Info Bar */
+  .hardware-bar {
+    background: #080808;
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  .hw-tag { font-family: monospace; background: #141414; padding: 2px 6px; border-radius: 4px; color: #7dd3fc; border: 1px solid #222; }
+  .gpio-pill { font-family: monospace; padding: 2px 8px; border-radius: 4px; font-weight: 700; }
+  .gpio-pill.OFF { background: #141414; color: #71717a; border: 1px solid #222; }
+  .gpio-pill.ACTIVE { background: #dc2626; color: #fff; animation: blink-fast 0.6s infinite; }
+  @keyframes blink-fast { 50% { opacity: 0.3; } }
+
+  /* Main Grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card { background: #080808; border: 1px solid var(--surface-border); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+  .card h2 { font-size: 15px; font-weight: 600; margin-bottom: 14px; color: #e2e8f0; border-bottom: 1px solid var(--surface-border); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+
+  /* Buttons */
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  button { background: #141414; color: var(--text); border: 1px solid #262626; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; transition: all 0.2s; }
+  button:hover { background: #222222; border-color: #38bdf8; }
+  button.primary { background: #0284c7; color: #fff; font-weight: 600; border-color: #0369a1; }
+  button.primary:hover { background: #0369a1; }
+  button.alert-btn { background: #991b1b; color: #fff; font-weight: 700; border: 1px solid #dc2626; }
+  button.alert-btn:hover { background: #b91c1c; }
+  button.active-mode { background: #059669; color: #fff; font-weight: 600; border-color: #10b981; }
+
+  /* Waveform Canvas */
+  canvas { width: 100%; height: 160px; background: #000000; border-radius: 8px; border: 1px solid var(--surface-border); margin-bottom: 12px; }
+
+  /* Vitals Grid */
+  .vitals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  .vital-box { background: #000000; padding: 12px; border-radius: 8px; text-align: center; border: 1px solid var(--surface-border); }
+  .vital-val { font-size: 20px; font-weight: 700; color: #38bdf8; }
+  .vital-lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
+
+  /* Result Banner */
+  .result-banner { padding: 14px; border-radius: 8px; margin-top: 14px; border: 1px solid var(--surface-border); display: none; }
+  .result-banner.LOW_RISK { background: #021a0d; border-color: var(--success); }
+  .result-banner.MONITOR { background: #241402; border-color: var(--warning); }
+  .result-banner.CRITICAL { background: #260505; border-color: var(--danger); }
+  .result-banner.REJECTED { background: #141414; border-color: #52525b; }
+  .result-status { font-size: 16px; font-weight: 700; }
+  .result-details { font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.5; }
+
+  /* JSON Output & Log Table */
+  pre { background: #000000; padding: 10px; border-radius: 6px; font-size: 11px; color: #93c5fd; overflow-x: auto; max-height: 160px; border: 1px solid var(--surface-border); }
+  .log-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 10px; background: #000000; }
+  .log-table th, .log-table td { border: 1px solid var(--surface-border); padding: 6px 8px; text-align: left; }
+  .log-table th { background: #0e0e0e; color: #94a3b8; font-weight: 600; }
+
+  /* Clinical AI Agent Copilot Section */
+  .agent-section {
+    margin-top: 24px;
+    background: #060606;
+    border: 1px solid #0284c7;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.2);
+  }
+  .agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--surface-border);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .agent-badge {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .agent-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+  }
+  .agent-panel {
+    background: #000000;
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .agent-panel h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .agent-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .agent-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #141414;
+  }
+  .agent-list li:last-child {
+    border-bottom: none;
+  }
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+  }
+  .chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background: #030303;
+    border-radius: 6px;
+    border: 1px solid var(--surface-border);
+    margin-bottom: 10px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .chat-msg {
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+  .chat-msg.user {
+    align-self: flex-end;
+    background: #0369a1;
+    color: #fff;
+    border-bottom-right-radius: 2px;
+  }
+  .chat-msg.agent {
+    align-self: flex-start;
+    background: #0c0c0c;
+    color: #e2e8f0;
+    border-left: 3px solid #0284c7;
+    border-bottom-left-radius: 2px;
+  }
+  .chip-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .chip {
+    font-size: 11px;
+    background: #111111;
+    color: #7dd3fc;
+    border: 1px solid #222222;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .chip:hover {
+    background: #0284c7;
+    color: #fff;
+    border-color: #38bdf8;
+  }
+  .chat-input-bar {
+    display: flex;
+    gap: 8px;
+  }
+  .chat-input {
+    flex: 1;
+    background: #000000;
+    border: 1px solid #222222;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+  .chat-input:focus {
+    outline: none;
+    border-color: #38bdf8;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="title-group">
+    <h1>Physiological Health Monitoring System</h1>
+    <p>ESP32 IoT Gateway | AD8232 ECG + MAX30102 SpO2/BPM + DS18B20 Temp | Calibrated ML Pipeline</p>
+  </div>
+  <div class="header-actions">
+    <button id="btnAudioToggle" onclick="toggleAudioAlarm()" style="font-size:11px; background:#141414; border:1px solid #262626;">🔊 Alarm Audio: ON</button>
+    <a class="nav-link" href="/report" target="_blank">&#128202; Full Report</a>
+  </div>
+</div>
+
+<!-- Prominent Clinical Alert Signal Bar -->
+<div id="alertSignalBar" class="alert-signal-bar NORMAL">
+  <div style="display:flex; align-items:center; gap:10px;">
+    <span id="alertIcon" style="font-size:18px;">&#9989;</span>
+    <div>
+      <span id="alertTitle">ALERT SIGNAL: NORMAL (PATIENT STABLE)</span>
+      <div id="alertSubtext" style="font-size:11px; font-weight:400; opacity:0.9;">No cardiac arrhythmia or desaturation detected. Continuous passive monitoring active.</div>
+    </div>
+  </div>
+  <div>
+    <span id="alertTimePill" style="font-size:11px; background:rgba(0,0,0,0.25); padding:3px 8px; border-radius:4px; font-family:monospace;">SYSTEM ONLINE</span>
+  </div>
+</div>
+
+<!-- Hardware Telemetry Bar -->
+<div class="hardware-bar">
+  <div>
+    <b>ESP32 Node:</b> <span class="hw-tag" id="hwNodeId">ESP32-HOW2ELEC-NODE</span> | 
+    <b>AD8232 (ECG):</b> <span id="hwLeadsStatus" style="color:#22c55e;">&#10003; Leads Attached</span> | 
+    <b>Temp:</b> <span id="hwTemp">36.6&deg;C</span> |
+    <b>Alarm Pin 13:</b> <span id="hwGpio13" class="gpio-pill OFF">GPIO 13: OFF</span>
+  </div>
+  <div>
+    <button id="btnLiveEsp" onclick="toggleEsp32LiveStream()" style="font-size:11px; padding:4px 10px;">&#128225; Start ESP32 Live Mode</button>
+  </div>
+</div>
+
+<div class="grid-2">
+  <!-- Left Panel: Signal Controller -->
+  <div class="card">
+    <h2>
+      <span>1. Physiological Signal Stream</span>
+      <span style="font-size:11px; color:#38bdf8; font-weight:normal;" id="signalFs">360 Hz</span>
+    </h2>
+    <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Select clinical stream source or trigger the Emergency Alert Signal:</p>
+    
+    <div class="btn-group">
+      <button id="btnAlert" class="alert-btn" onclick="loadPreset('alert')">&#128680; Emergency Alert Signal</button>
+      <button id="btn100" onclick="loadPreset('100')">&#10084;&#65039; MIT-BIH 100 (Normal)</button>
+      <button id="btn106" onclick="loadPreset('106')">&#9888;&#65039; MIT-BIH 106 (Arrhythmia)</button>
+      <button id="btnCorrupt" onclick="loadPreset('corrupt')">&#10060; Detached Lead (LO+/LO-)</button>
+      <button id="btnTachy" onclick="loadPreset('tachycardia')">&#129658; Hypoxia Vector</button>
+    </div>
+
+    <canvas id="ecgCanvas"></canvas>
+    
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-size:12px; color:var(--text-muted);" id="signalStatus">Ready</span>
+      <button class="primary" id="btnInfer" onclick="runInference()">&#9654; Run Secure Inference</button>
+    </div>
+  </div>
+
+  <!-- Right Panel: Clinical Inference Result -->
+  <div class="card">
+    <h2>2. Clinical Triage & Risk Prediction</h2>
+
+    <div class="vitals-grid">
+      <div class="vital-box"><div class="vital-val" id="vitalHR">72.0</div><div class="vital-lbl">Heart Rate (bpm)</div></div>
+      <div class="vital-box"><div class="vital-val" id="vitalSpO2">98.0</div><div class="vital-lbl">SpO2 (%)</div></div>
+      <div class="vital-box"><div class="vital-val" id="vitalRMSSD">25.0</div><div class="vital-lbl">RMSSD (ms)</div></div>
+      <div class="vital-box"><div class="vital-val" id="vitalTemp">36.6&deg;C</div><div class="vital-lbl">Body Temp</div></div>
+    </div>
+
+    <div id="resultBanner" class="result-banner">
+      <div class="result-status" id="resStatus">Normal Sinus Rhythm</div>
+      <div class="result-details" id="resDetails">Confidence: 96.8% | Triage: LOW_RISK</div>
+    </div>
+
+    <h2 style="margin-top:16px;">3. Recent Alert Signals Log</h2>
+    <table class="log-table">
+      <thead>
+        <tr><th>Time (UTC)</th><th>Alert Level</th><th>Condition</th><th>Vitals</th><th>Action Protocol</th></tr>
+      </thead>
+      <tbody id="alertLogTable">
+        <tr><td>--:--:--</td><td><span style="color:#22c55e;">NORMAL</span></td><td>Sinus Baseline</td><td>72 bpm, 98% SpO2</td><td>Passive Monitoring</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:16px;">4. Sanitized API Response Payload</h2>
+    <pre id="jsonOutput">// Click 'Run Secure Inference' or 'Emergency Alert Signal'...</pre>
+  </div>
+</div>
+
+<!-- Clinical AI Agent Copilot Section -->
+<div class="agent-section">
+  <div class="agent-header">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="font-size:24px;">🤖</span>
+      <div>
+        <h2 style="font-size:16px; font-weight:700; color:#f8fafc; border:none; padding:0; margin:0;">
+          CardioGuard Clinical AI Agent Copilot
+        </h2>
+        <span style="font-size:12px; color:var(--text-muted);">Autonomous Diagnostic Reasoning & Real-Time Decision Support</span>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="agent-badge">AI COPILOT ACTIVE</span>
+      <span id="agentRiskPill" style="font-size:11px; padding:3px 10px; border-radius:4px; font-weight:700; background:rgba(34,197,94,0.2); color:#4ade80;">LOW RISK</span>
+    </div>
+  </div>
+
+  <div class="agent-grid">
+    <!-- Left Column: Diagnostic Assessment & Action Protocols -->
+    <div class="agent-panel">
+      <h3><span>📋</span> Diagnostic Assessment & Findings</h3>
+      <div id="agentSummary" style="font-size:13px; font-weight:600; color:#e2e8f0; margin-bottom:8px; line-height:1.4;">
+        Normal Sinus Rhythm with healthy autonomic regulation.
+      </div>
+      
+      <div style="font-size:12px; color:#94a3b8; margin-bottom:12px;">
+        <b>Primary Finding:</b> <span id="agentFinding" style="color:#7dd3fc;">Normal Sinus Rhythm (Hemodynamically Stable)</span>
+      </div>
+
+      <h3><span>🔍</span> Diagnostic Rationale</h3>
+      <ul id="agentRationale" class="agent-list">
+        <li>&#10003; Heart rate 72.0 bpm is within healthy normal resting boundaries (60-100 bpm).</li>
+        <li>&#10003; Oxygen saturation 98.0% indicates normal arterial oxygenation.</li>
+        <li>&#10003; Autonomic tone markers reflect balanced parasympathetic/sympathetic tone.</li>
+      </ul>
+
+      <h3 style="margin-top:12px;"><span>🚨</span> Immediate Clinical Action Protocol</h3>
+      <ul id="agentActions" class="agent-list" style="color:#fef08a;">
+        <li>&bull; Continue standard continuous passive telemetry monitoring.</li>
+        <li>&bull; Maintain periodic vital sign logging every 60 seconds.</li>
+      </ul>
+
+      <h3 style="margin-top:12px;"><span>🩺</span> Differential Diagnosis</h3>
+      <div id="agentDifferentials" style="font-size:11px; color:#cbd5e1;">
+        Normal Cardiac Physiology | Physiologic Sinus Rhythm
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Clinician Dialogue / Chat -->
+    <div class="agent-panel chat-box">
+      <h3><span>💬</span> Clinician Dialogue Interface</h3>
+      <div class="chip-group">
+        <button class="chip" onclick="askAgentChip('Explain why this alert was triggered and key biomarker drivers.')">🚨 Explain Alert</button>
+        <button class="chip" onclick="askAgentChip('What is the recommended emergency treatment protocol?')">📋 Protocol</button>
+        <button class="chip" onclick="askAgentChip('Provide the differential diagnosis for this cardiac rhythm.')">🩺 Differentials</button>
+        <button class="chip" onclick="askAgentChip('Analyze Heart Rate Variability (RMSSD) and autonomic tone.')">📈 HRV Tone</button>
+      </div>
+
+      <div class="chat-history" id="chatHistory">
+        <div class="chat-msg agent">
+          <b>CardioGuard AI:</b> Hello Doctor/Nurse. I am continuously analyzing the patient's multi-parameter vitals (ECG, SpO2, Temperature, HRV). You can ask me diagnostic questions or click a quick prompt above.
+        </div>
+      </div>
+
+      <div class="chat-input-bar">
+        <input type="text" id="chatInput" class="chat-input" placeholder="Ask AI Copilot (e.g. 'Explain risk drivers', 'Protocol')..." onkeydown="if(event.key==='Enter') sendAgentQuery()">
+        <button class="primary" onclick="sendAgentQuery()">Ask AI</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentSignal = [];
+let espPollingInterval = null;
+let audioEnabled = true;
+let audioCtx = null;
+let currentAlertLevel = "NORMAL";
+const fs = 360.0;
+const canvas = document.getElementById("ecgCanvas");
+const ctx = canvas.getContext("2d");
+
+// Initialize Web Audio API for medical alert sounds
+function getAudioContext() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  return audioCtx;
+}
+
+// Medical monitor beep sound
+function playHeartbeatBeep(freq = 660, duration = 0.06) {
+  if (!audioEnabled) return;
+  try {
+    const actx = getAudioContext();
+    const osc = actx.createOscillator();
+    const gain = actx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(freq, actx.currentTime);
+    gain.gain.setValueAtTime(0.08, actx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(actx.destination);
+    osc.start();
+    osc.stop(actx.currentTime + duration);
+  } catch (e) {}
+}
+
+// Emergency 2-tone alarm siren
+function playEmergencyAlertSiren() {
+  if (!audioEnabled) return;
+  try {
+    const actx = getAudioContext();
+    const osc = actx.createOscillator();
+    const gain = actx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(880, actx.currentTime);
+    osc.frequency.setValueAtTime(660, actx.currentTime + 0.15);
+    gain.gain.setValueAtTime(0.20, actx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.35);
+    osc.connect(gain);
+    gain.connect(actx.destination);
+    osc.start();
+    osc.stop(actx.currentTime + 0.35);
+  } catch (e) {}
+}
+
+function toggleAudioAlarm() {
+  audioEnabled = !audioEnabled;
+  const btn = document.getElementById("btnAudioToggle");
+  if (audioEnabled) {
+    btn.innerText = "🔊 Alarm Audio: ON";
+    btn.style.background = "#334155";
+    playHeartbeatBeep(700, 0.08);
+  } else {
+    btn.innerText = "🔇 Alarm Audio: MUTED";
+    btn.style.background = "#475569";
+  }
+}
+
+// Update the alert signal banner
+function updateAlertSignal(level, condition, details, action) {
+  currentAlertLevel = level;
+  const bar = document.getElementById("alertSignalBar");
+  const icon = document.getElementById("alertIcon");
+  const title = document.getElementById("alertTitle");
+  const subtext = document.getElementById("alertSubtext");
+  const timePill = document.getElementById("alertTimePill");
+  const gpio = document.getElementById("hwGpio13");
+
+  bar.className = `alert-signal-bar ${level}`;
+  const now = new Date().toTimeString().split(" ")[0];
+  timePill.innerText = now;
+
+  if (level === "CRITICAL") {
+    icon.innerHTML = "&#128680;";
+    title.innerText = `CRITICAL EMERGENCY ALERT: ${condition.toUpperCase()}`;
+    subtext.innerText = `ACTION: ${action || "Immediate ICU physician alert dispatch & defibrillator readiness."}`;
+    gpio.className = "gpio-pill ACTIVE";
+    gpio.innerText = "GPIO 13: [ ACTIVE - ALARM ON ]";
+    playEmergencyAlertSiren();
+    addAlertLogRow(now, "CRITICAL", condition, action);
+  } else if (level === "MONITOR") {
+    icon.innerHTML = "&#9888;&#65039;";
+    title.innerText = `ALERT SIGNAL: MONITOR (${condition.toUpperCase()})`;
+    subtext.innerText = `ACTION: ${action || "Borderline cardiac stability. Flagged on nursing telemetry."}`;
+    gpio.className = "gpio-pill OFF";
+    gpio.innerText = "GPIO 13: OFF";
+    playHeartbeatBeep(520, 0.1);
+    addAlertLogRow(now, "MONITOR", condition, action);
+  } else if (level === "LEADS_OFF") {
+    icon.innerHTML = "&#9888;&#65039;";
+    title.innerText = "HARDWARE ALARM: AD8232 LEADS DETACHED (LO+/LO-)";
+    subtext.innerText = "ACTION: Electrodes detached from patient body. Verify RA/LA/RL biomedical pad contacts.";
+    gpio.className = "gpio-pill ACTIVE";
+    gpio.innerText = "GPIO 13: [ LEADS-OFF ]";
+    playEmergencyAlertSiren();
+    addAlertLogRow(now, "LEADS-OFF", "Electrode Detached", "Re-attach Pads");
+  } else {
+    icon.innerHTML = "&#9989;";
+    title.innerText = "ALERT SIGNAL: NORMAL (PATIENT STABLE)";
+    subtext.innerText = "No acute cardiac arrhythmia or desaturation. Continuous passive monitoring active.";
+    gpio.className = "gpio-pill OFF";
+    gpio.innerText = "GPIO 13: OFF";
+    playHeartbeatBeep(660, 0.05);
+  }
+}
+
+function addAlertLogRow(time, level, cond, action) {
+  const tbody = document.getElementById("alertLogTable");
+  const hr = document.getElementById("vitalHR").innerText;
+  const spo2 = document.getElementById("vitalSpO2").innerText;
+  const color = level === "CRITICAL" ? "#ef4444" : (level === "MONITOR" ? "#f59e0b" : "#22c55e");
+  
+  const row = `<tr>
+    <td>${time}</td>
+    <td><span style="color:${color}; font-weight:bold;">${level}</span></td>
+    <td>${cond}</td>
+    <td>${hr} bpm, ${spo2}</td>
+    <td>${action || "Routine Monitoring"}</td>
+  </tr>`;
+  tbody.innerHTML = row + tbody.innerHTML.slice(0, 400); // Keep last 5 rows
+}
+
+// Canvas Waveform Drawing
+function drawWaveform(sig) {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  ctx.fillStyle = "#000000";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw medical grid lines
+  ctx.strokeStyle = "rgba(30, 41, 59, 0.45)";
+  ctx.lineWidth = 1;
+  for (let x = 0; x < canvas.width; x += 25) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+  }
+  for (let y = 0; y < canvas.height; y += 25) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+  }
+
+  if (!sig || sig.length === 0) return;
+
+  const min = Math.min(...sig);
+  const max = Math.max(...sig);
+  const range = (max - min) || 1.0;
+  const padding = 15;
+
+  ctx.strokeStyle = currentAlertLevel === "CRITICAL" ? "#ef4444" : "#38bdf8";
+  ctx.lineWidth = 1.8;
+  ctx.beginPath();
+  const step = sig.length / canvas.width;
+
+  for (let x = 0; x < canvas.width; x++) {
+    const idx = Math.floor(x * step);
+    const val = sig[idx];
+    const y = canvas.height - padding - ((val - min) / range) * (canvas.height - 2 * padding);
+    if (x === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+}
+
+async function loadPreset(type) {
+  stopEsp32Polling();
+  document.getElementById("signalStatus").innerText = "Loading preset...";
+  try {
+    const res = await fetch(`/api/presets?type=${type}`);
+    const data = await res.json();
+    currentSignal = data.signal;
+
+    if (type === "alert") {
+      document.getElementById("vitalHR").innerText = "142.0";
+      document.getElementById("vitalSpO2").innerText = "86.5%";
+      document.getElementById("vitalRMSSD").innerText = "92.0";
+      updateAlertSignal("CRITICAL", "Acute Ventricular Tachycardia", "Arrhythmia detected", "STAT Physician Dispatch & Defibrillator Alert");
+      fetchAgentAnalysis({mean_hr_bpm: 142.0, spo2_mean: 86.5, rmssd_ms: 92.0}, {clinical_condition: "Acute Ventricular Tachycardia", triage_risk_tier: "CRITICAL"}, false);
+    } else if (type === "corrupt") {
+      document.getElementById("vitalHR").innerText = "0.0";
+      document.getElementById("vitalSpO2").innerText = "--";
+      updateAlertSignal("LEADS_OFF", "Sensor Disconnected", "Flatline or motion artifact", "Check AD8232 Pads");
+      fetchAgentAnalysis(null, {clinical_condition: "Electrode Disconnection", triage_risk_tier: "MONITOR"}, true);
+    } else if (type === "106") {
+      document.getElementById("vitalHR").innerText = "118.0";
+      document.getElementById("vitalSpO2").innerText = "94.0%";
+      updateAlertSignal("MONITOR", "Premature Ventricular Ectopy", "Borderline Arrhythmia", "Flagged for nursing telemetry audit");
+      fetchAgentAnalysis({mean_hr_bpm: 118.0, spo2_mean: 94.0, rmssd_ms: 35.0}, {clinical_condition: "Premature Ventricular Ectopy", triage_risk_tier: "MONITOR"}, false);
+    } else {
+      document.getElementById("vitalHR").innerText = "72.0";
+      document.getElementById("vitalSpO2").innerText = "98.0%";
+      updateAlertSignal("NORMAL", "Normal Sinus Rhythm", "Patient stable", "Passive Monitoring");
+      fetchAgentAnalysis({mean_hr_bpm: 72.0, spo2_mean: 98.0, rmssd_ms: 25.0}, {clinical_condition: "Normal Sinus Rhythm", triage_risk_tier: "LOW_RISK"}, false);
+    }
+
+    drawWaveform(currentSignal);
+    document.getElementById("signalStatus").innerText = `Loaded: ${data.name} (${currentSignal.length} samples)`;
+  } catch (e) {
+    document.getElementById("signalStatus").innerText = "Error loading preset";
+  }
+}
+
+async function runInference() {
+  if (!currentSignal || currentSignal.length === 0) {
+    alert("Please select a signal preset first.");
+    return;
+  }
+
+  document.getElementById("signalStatus").innerText = "Running inference...";
+  const banner = document.getElementById("resultBanner");
+  banner.style.display = "none";
+
+  try {
+    const res = await fetch("/v1/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer health_sec_token_9f83a2c0918bd47e"
+      },
+      body: JSON.stringify({
+        signal: currentSignal,
+        fs: fs,
+        spo2_signal: Array(100).fill(98.0)
+      })
+    });
+
+    const data = await res.json();
+    document.getElementById("jsonOutput").innerText = JSON.stringify(data, null, 2);
+    banner.style.display = "block";
+    banner.className = "result-banner";
+
+    if (res.status === 200 && data.status === "SUCCESS") {
+      const pred = data.prediction;
+      const vitals = data.clinical_vitals_summary;
+      
+      document.getElementById("vitalHR").innerText = vitals.heart_rate_bpm || "--";
+      document.getElementById("vitalRMSSD").innerText = vitals.rmssd_ms || "--";
+      document.getElementById("vitalSpO2").innerText = vitals.spo2_percent || "--";
+
+      document.getElementById("resStatus").innerText = pred.clinical_condition;
+      document.getElementById("resDetails").innerText = 
+        `Triage Tier: ${pred.triage_risk_tier} | Calibrated Confidence: ${(pred.calibrated_confidence*100).toFixed(1)}% | Pathology Prob: ${(pred.pathology_probability*100).toFixed(1)}%`;
+
+      banner.classList.add(pred.triage_risk_tier);
+      document.getElementById("signalStatus").innerText = `Inference: ${pred.triage_risk_tier}`;
+
+      // Update the Alert Signal Bar
+      if (pred.triage_risk_tier === "CRITICAL") {
+        updateAlertSignal("CRITICAL", pred.clinical_condition, "High risk of cardiac event", "STAT Physician Alert");
+      } else if (pred.triage_risk_tier === "MONITOR") {
+        updateAlertSignal("MONITOR", pred.clinical_condition, "Elevated risk", "Nursing Station Review");
+      } else {
+        updateAlertSignal("NORMAL", pred.clinical_condition, "Normal sinus rhythm", "Routine Monitoring");
+      }
+
+      // Autonomous Clinical AI Agent Assessment
+      fetchAgentAnalysis(vitals, pred, false);
+    } else if (res.status === 422) {
+      document.getElementById("resStatus").innerText = "REJECTED (Low Quality Signal)";
+      document.getElementById("resDetails").innerText = `${data.rejection_reason} | SQI: ${data.quality_score}`;
+      banner.classList.add("REJECTED");
+      document.getElementById("signalStatus").innerText = "Rejected by SQI Safeguard";
+      updateAlertSignal("LEADS_OFF", "SQI Rejection", data.rejection_reason, "Check Electrode Contact");
+      fetchAgentAnalysis(null, {clinical_condition: "SQI Rejection / Artifact", triage_risk_tier: "MONITOR"}, true);
+    }
+  } catch (e) {
+    alert("Inference failed: " + e.message);
+  }
+}
+
+// Clinical AI Agent Copilot Functions
+let latestAgentReport = null;
+
+async function fetchAgentAnalysis(vitals, pred, leadsOff) {
+  try {
+    const hr = vitals && vitals.heart_rate_bpm ? vitals.heart_rate_bpm : (parseFloat(document.getElementById("vitalHR").innerText) || 72.0);
+    const spo2 = vitals && vitals.spo2_percent ? vitals.spo2_percent : (parseFloat(document.getElementById("vitalSpO2").innerText) || 98.0);
+    const rmssd = vitals && vitals.rmssd_ms ? vitals.rmssd_ms : (parseFloat(document.getElementById("vitalRMSSD").innerText) || 25.0);
+    const temp = vitals && vitals.temperature_c ? vitals.temperature_c : (parseFloat(document.getElementById("vitalTemp").innerText) || 36.6);
+    
+    const condition = pred && pred.clinical_condition ? pred.clinical_condition : (document.getElementById("resStatus").innerText || "Normal Sinus Rhythm");
+    const tier = pred && pred.triage_risk_tier ? pred.triage_risk_tier : (currentAlertLevel || "LOW_RISK");
+    const conf = pred && pred.calibrated_confidence ? pred.calibrated_confidence : 0.95;
+
+    const res = await fetch("/api/agent/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        features: {
+          mean_hr_bpm: hr,
+          spo2_mean: spo2,
+          temperature_c: temp,
+          rmssd_ms: rmssd,
+          sdnn_ms: 34.0,
+          lf_hf_ratio: 1.25
+        },
+        prediction: {
+          clinical_condition: condition,
+          triage_risk_tier: tier,
+          calibrated_confidence: conf
+        },
+        leads_off: Boolean(leadsOff)
+      })
+    });
+
+    const data = await res.json();
+    if (data && data.status === "SUCCESS") {
+      const rep = data.report;
+      latestAgentReport = rep;
+
+      document.getElementById("agentSummary").innerText = rep.assessment_summary;
+      document.getElementById("agentFinding").innerText = rep.primary_finding;
+
+      const riskPill = document.getElementById("agentRiskPill");
+      riskPill.innerText = rep.risk_level;
+      if (rep.risk_level === "CRITICAL") {
+        riskPill.style.background = "rgba(239,68,68,0.25)";
+        riskPill.style.color = "#ef4444";
+      } else if (rep.risk_level === "MONITOR") {
+        riskPill.style.background = "rgba(245,158,11,0.25)";
+        riskPill.style.color = "#f59e0b";
+      } else {
+        riskPill.style.background = "rgba(34,197,94,0.2)";
+        riskPill.style.color = "#4ade80";
+      }
+
+      // Diagnostic Rationale
+      const ratList = document.getElementById("agentRationale");
+      ratList.innerHTML = rep.clinical_rationale.map(r => `<li>&#10003; ${r}</li>`).join("");
+
+      // Action protocol
+      const actList = document.getElementById("agentActions");
+      actList.innerHTML = rep.immediate_actions.map(a => `<li>&bull; ${a}</li>`).join("");
+
+      // Differentials
+      document.getElementById("agentDifferentials").innerText = rep.differential_diagnosis.join(" | ");
+    }
+  } catch (err) {
+    console.warn("AI Agent analysis error:", err);
+  }
+}
+
+async function sendAgentQuery(customQuery) {
+  const inputEl = document.getElementById("chatInput");
+  const query = customQuery || inputEl.value.trim();
+  if (!query) return;
+  if (!customQuery) inputEl.value = "";
+
+  const hist = document.getElementById("chatHistory");
+  
+  // User bubble
+  const userDiv = document.createElement("div");
+  userDiv.className = "chat-msg user";
+  userDiv.innerText = query;
+  hist.appendChild(userDiv);
+  hist.scrollTop = hist.scrollHeight;
+
+  // Loading indicator
+  const loadDiv = document.createElement("div");
+  loadDiv.className = "chat-msg agent";
+  loadDiv.innerText = "CardioGuard AI is reasoning...";
+  hist.appendChild(loadDiv);
+  hist.scrollTop = hist.scrollHeight;
+
+  try {
+    const hr = parseFloat(document.getElementById("vitalHR").innerText) || 72;
+    const spo2 = parseFloat(document.getElementById("vitalSpO2").innerText) || 98;
+    const cond = document.getElementById("resStatus").innerText || "Normal Sinus Rhythm";
+    
+    const res = await fetch("/api/agent/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: query,
+        state: {
+          features: {
+            mean_hr_bpm: hr,
+            spo2_mean: spo2,
+            temperature_c: parseFloat(document.getElementById("vitalTemp").innerText) || 36.6,
+            rmssd_ms: parseFloat(document.getElementById("vitalRMSSD").innerText) || 25,
+            lf_hf_ratio: 1.2
+          },
+          prediction: {
+            clinical_condition: cond,
+            triage_risk_tier: currentAlertLevel || "LOW_RISK"
+          }
+        }
+      })
+    });
+    const data = await res.json();
+    if (data && data.status === "SUCCESS") {
+      loadDiv.innerHTML = `<b>CardioGuard AI:</b><br>${data.response.replace(/\n/g, "<br>").replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")}`;
+    } else {
+      loadDiv.innerText = "Error: " + (data.message || "Could not query agent.");
+    }
+  } catch (err) {
+    loadDiv.innerText = "Communication error with AI Agent: " + err.message;
+  }
+  hist.scrollTop = hist.scrollHeight;
+}
+
+function askAgentChip(promptText) {
+  sendAgentQuery(promptText);
+}
+
+// ESP32 Live Telemetry Poller
+function toggleEsp32LiveStream() {
+  if (espPollingInterval) {
+    stopEsp32Polling();
+  } else {
+    startEsp32Polling();
+  }
+}
+
+function startEsp32Polling() {
+  const btn = document.getElementById("btnLiveEsp");
+  btn.innerText = "⏹ Stop ESP32 Live Mode";
+  btn.className = "active-mode";
+  document.getElementById("signalStatus").innerText = "Listening for live ESP32 telemetry packets...";
+
+  espPollingInterval = setInterval(async () => {
+    try {
+      const res = await fetch("/api/esp32/latest");
+      const data = await res.json();
+      if (!data || !data.device_pseudonym || data.device_pseudonym === "NO_DEVICE_CONNECTED") return;
+
+      document.getElementById("hwNodeId").innerText = data.device_pseudonym;
+      document.getElementById("hwTemp").innerText = `${data.temperature_c.toFixed(1)}°C`;
+      document.getElementById("vitalTemp").innerText = `${data.temperature_c.toFixed(1)}°C`;
+      document.getElementById("vitalHR").innerText = data.bpm.toFixed(1);
+      document.getElementById("vitalSpO2").innerText = `${data.spo2.toFixed(1)}%`;
+
+      if (data.leads_off) {
+        document.getElementById("hwLeadsStatus").innerHTML = "<span style='color:#ef4444;'>&#9888; Electrodes Detached (LO+/LO-)</span>";
+        updateAlertSignal("LEADS_OFF", "Electrode Detached", "LO+/LO- triggered", "Check Electrode Pads");
+        fetchAgentAnalysis({bpm: data.bpm, spo2: data.spo2, temperature_c: data.temperature_c}, data.prediction, true);
+      } else {
+        document.getElementById("hwLeadsStatus").innerHTML = "<span style='color:#22c55e;'>&#10003; Leads Attached</span>";
+      }
+
+      if (data.signal && data.signal.length > 0) {
+        currentSignal = data.signal;
+        drawWaveform(currentSignal);
+      }
+
+      const pred = data.prediction || {};
+      const tier = pred.triage_risk_tier || "LOW_RISK";
+      if (!data.leads_off) {
+        if (tier === "CRITICAL") {
+          updateAlertSignal("CRITICAL", pred.clinical_condition, "Pathology detected", "Physician Alert Dispatch");
+        } else if (tier === "MONITOR") {
+          updateAlertSignal("MONITOR", pred.clinical_condition, "Elevated risk", "Nursing Review");
+        } else {
+          updateAlertSignal("NORMAL", pred.clinical_condition, "Stable", "Passive Monitoring");
+        }
+        fetchAgentAnalysis({bpm: data.bpm, spo2: data.spo2, temperature_c: data.temperature_c}, pred, false);
+      }
+
+      document.getElementById("jsonOutput").innerText = JSON.stringify(data, null, 2);
+    } catch (e) {
+      console.warn("Polling ESP32 telemetry:", e);
+    }
+  }, 1000);
+}
+
+function stopEsp32Polling() {
+  if (espPollingInterval) {
+    clearInterval(espPollingInterval);
+    espPollingInterval = null;
+    const btn = document.getElementById("btnLiveEsp");
+    btn.innerText = "📡 Start ESP32 Live Mode";
+    btn.className = "";
+  }
+}
+
+// Initial load
+window.onload = () => {
+  loadPreset("100");
+  setTimeout(() => fetchAgentAnalysis(), 600);
+};
+</script>
+
+</body>
+</html>

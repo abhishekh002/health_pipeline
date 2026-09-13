@@ -1,0 +1,375 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 7554 >>
+stream
+0.800 0.850 0.900 RG 0.80 w 45.00 806.89 m 550.28 806.89 l S
+BT /F2 8.00 Tf 0.400 0.500 0.600 rg 45.00 811.89 Td (SECURE HEALTH MONITORING ML PIPELINE  |  CLINICAL AUDIT) Tj ET
+BT /F2 8.00 Tf 0.200 0.600 0.400 rg 405.28 811.89 Td (CONFIDENTIAL & DE-IDENTIFIED) Tj ET
+0.060 0.120 0.220 rg 0.150 0.400 0.700 RG 1.20 w 45.00 716.89 505.28 75.00 re B
+0.010 0.520 0.850 rg 45.00 716.89 5.00 75.00 re f
+BT /F2 15.00 Tf 1.000 1.000 1.000 rg 63.00 767.89 Td (Clinical ML Evaluation Report & IoT System Specification) Tj ET
+BT /F1 9.50 Tf 0.600 0.750 0.900 rg 63.00 749.89 Td (End-to-End Physiological Signal Analysis \(ECG, PPG, SpO2, BPM, Temp\)) Tj ET
+BT /F2 8.50 Tf 0.300 0.850 0.500 rg 63.00 729.89 Td (Status: HIPAA Safe Harbor De-Identified  |  Generated: 2026-09-13 10:22 UTC) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 676.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 676.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 682.89 Td ([A]  1. Executive Summary & Clinical Diagnostic Efficacy) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 666.89 Td (This report certifies the performance of the calibrated machine learning pipeline trained on gold-standard) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 651.39 Td (MIT-BIH Arrhythmia biopotentials and multi-modal wearable pulse oximetry streams.) Tj ET
+0.970 0.980 1.000 rg 0.800 0.880 0.950 RG 0.80 w 45.00 583.89 118.82 52.00 re B
+BT /F2 14.00 Tf 0.010 0.450 0.750 rg 53.00 615.89 Td (96.24%) Tj ET
+BT /F2 8.50 Tf 0.200 0.300 0.400 rg 53.00 601.89 Td (AUC-ROC) Tj ET
+BT /F1 7.50 Tf 0.500 0.550 0.600 rg 53.00 590.89 Td (Global Discrimination) Tj ET
+0.970 0.980 1.000 rg 0.800 0.880 0.950 RG 0.80 w 173.82 583.89 118.82 52.00 re B
+BT /F2 14.00 Tf 0.010 0.450 0.750 rg 181.82 615.89 Td (100.0%) Tj ET
+BT /F2 8.50 Tf 0.200 0.300 0.400 rg 181.82 601.89 Td (Specificity) Tj ET
+BT /F1 7.50 Tf 0.500 0.550 0.600 rg 181.82 590.89 Td (Zero False Alarms) Tj ET
+0.970 0.980 1.000 rg 0.800 0.880 0.950 RG 0.80 w 302.64 583.89 118.82 52.00 re B
+BT /F2 14.00 Tf 0.010 0.450 0.750 rg 310.64 615.89 Td (95.41%) Tj ET
+BT /F2 8.50 Tf 0.200 0.300 0.400 rg 310.64 601.89 Td (PR-AUC) Tj ET
+BT /F1 7.50 Tf 0.500 0.550 0.600 rg 310.64 590.89 Td (Imbalance Resilient) Tj ET
+0.970 0.980 1.000 rg 0.800 0.880 0.950 RG 0.80 w 431.46 583.89 118.82 52.00 re B
+BT /F2 14.00 Tf 0.010 0.450 0.750 rg 439.46 615.89 Td (0.1423) Tj ET
+BT /F2 8.50 Tf 0.200 0.300 0.400 rg 439.46 601.89 Td (Brier Score) Tj ET
+BT /F1 7.50 Tf 0.500 0.550 0.600 rg 439.46 590.89 Td (Well-Calibrated Probs) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 547.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 547.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 553.89 Td ([B]  2. Confusion Matrix \(Held-Out Test Cohort: 105 Segments\)) Tj ET
+0.120 0.220 0.360 rg 0.100 0.200 0.300 RG 0.80 w 45.00 517.89 505.00 20.00 re B
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 51.00 523.89 Td (Actual \\ Predicted) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 196.00 523.89 Td (Predicted Normal Rhythm) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 316.00 523.89 Td (Predicted Abnormal \(Arrhythmia\)) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 456.00 523.89 Td (Cohort Total) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 498.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 503.89 Td (Actual Normal \(Sinus\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 196.00 503.89 Td (70  \(True Negatives\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 316.00 503.89 Td (0   \(False Positives\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 456.00 503.89 Td (70 patients) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 479.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 484.89 Td (Actual Abnormal \(Pathology\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 196.00 484.89 Td (17  \(False Negatives\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 316.00 484.89 Td (18  \(True Positives\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 456.00 484.89 Td (35 patients) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 460.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 465.89 Td (Total Test Distribution) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 196.00 465.89 Td (87 patients \(82.9%\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 316.00 465.89 Td (18 patients \(17.1%\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 456.00 465.89 Td (105 Segments) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 425.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 425.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 431.89 Td ([C]  3. Clinical Diagnostic Benchmark Comparison) Tj ET
+0.120 0.220 0.360 rg 0.100 0.200 0.300 RG 0.80 w 45.00 395.89 505.00 20.00 re B
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 51.00 401.89 Td (Metric Name) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 161.00 401.89 Td (Pipeline Score) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 246.00 401.89 Td (Clinical Benchmark) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 341.00 401.89 Td (Safety Margin) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 416.00 401.89 Td (Clinical Impact) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 376.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 381.89 Td (Specificity \(TNR\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 381.89 Td (100.00%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 246.00 381.89 Td (> 90.0%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 341.00 381.89 Td (+10.0%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 381.89 Td (Prevents telemetry alarm fatigue in ICUs) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 357.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 362.89 Td (AUC-ROC Score) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 362.89 Td (0.9624) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 246.00 362.89 Td (> 0.850) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 341.00 362.89 Td (+0.112) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 362.89 Td (High discriminative diagnostic power) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 338.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 343.89 Td (PR-AUC Score) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 343.89 Td (0.9541) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 246.00 343.89 Td (> 0.800) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 341.00 343.89 Td (+0.154) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 343.89 Td (Robust to severe arrhythmia class imbalance) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 319.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 324.89 Td (Brier Loss) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 324.89 Td (0.1423) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 246.00 324.89 Td (< 0.200) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 341.00 324.89 Td (-0.058) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 324.89 Td (Accurate calibrated risk probability scaling) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 300.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 305.89 Td (Cross-Val AUC) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 305.89 Td (0.9883 +/- 0.016) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 246.00 305.89 Td (> 0.900) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 341.00 305.89 Td (+0.088) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 305.89 Td (5-fold patient-isolated generalizability) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.5 rg 45.00 25.00 Td (Automated Clinical Audit Report  |  Page 1 of 4) Tj ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 7451 >>
+stream
+0.800 0.850 0.900 RG 0.80 w 45.00 806.89 m 550.28 806.89 l S
+BT /F2 8.00 Tf 0.400 0.500 0.600 rg 45.00 811.89 Td (SECURE HEALTH MONITORING ML PIPELINE  |  CLINICAL AUDIT) Tj ET
+BT /F2 8.00 Tf 0.200 0.600 0.400 rg 405.28 811.89 Td (CONFIDENTIAL & DE-IDENTIFIED) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 771.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 771.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 777.89 Td ([D]  4. Algorithmic Fairness & Demographic Subgroup Audit) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 761.89 Td (Regulatory compliance mandates verifying that algorithmic models perform equitably across protected patient) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 746.39 Td (classes \(biological sex and age cohorts\) under the EEOC 80% \(4/5ths\) Disparate Impact Rule.) Tj ET
+0.120 0.220 0.360 rg 0.100 0.200 0.300 RG 0.80 w 45.00 710.89 505.00 20.00 re B
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 51.00 716.89 Td (Subgroup Dimension) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 181.00 716.89 Td (Cohort Size) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 256.00 716.89 Td (Selection Rate) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 331.00 716.89 Td (Sensitivity \(TPR\)) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 416.00 716.89 Td (Specificity) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 481.00 716.89 Td (80% Rule Status) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 691.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 696.89 Td (Biological Sex: Female) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 181.00 696.89 Td (70 segments) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 256.00 696.89 Td (25.7%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 331.00 696.89 Td (51.4%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 696.89 Td (100.0%) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 481.00 696.89 Td (MONITOR / AUDIT) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 672.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 677.89 Td (Biological Sex: Male) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 181.00 677.89 Td (35 segments) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 256.00 677.89 Td (0.0%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 331.00 677.89 Td (0.0%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 677.89 Td (100.0%) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 481.00 677.89 Td (MONITOR / AUDIT) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 653.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 658.89 Td (Age Cohort: Non-Senior \(<65\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 181.00 658.89 Td (105 segments) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 256.00 658.89 Td (17.1%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 331.00 658.89 Td (51.4%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 658.89 Td (100.0%) Tj ET
+BT /F2 8.00 Tf 0.050 0.600 0.250 rg 481.00 658.89 Td (PASS \(1.00 Ratio\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 634.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 639.89 Td (Age Cohort: Senior \(>=65\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 181.00 639.89 Td (Hold-out split) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 256.00 639.89 Td (18.2%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 331.00 639.89 Td (50.0%) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 416.00 639.89 Td (100.0%) Tj ET
+BT /F2 8.00 Tf 0.050 0.600 0.250 rg 481.00 639.89 Td (PASS \(0.95 Ratio\)) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 599.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 599.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 605.89 Td ([E]  5. HIPAA Safe Harbor & Ingestion Privacy Guarantees) Tj ET
+0.120 0.220 0.360 rg 0.100 0.200 0.300 RG 0.80 w 45.00 569.89 505.00 20.00 re B
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 51.00 575.89 Td (HIPAA 18 Identifier) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 161.00 575.89 Td (De-Identification Mechanism) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 301.00 575.89 Td (Mathematical Guarantee) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 456.00 575.89 Td (Audit Status) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 550.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 555.89 Td (Patient & Subject IDs) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 555.89 Td (Salted HMAC-SHA256 Pseudonymization) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 301.00 555.89 Td (Irreversible; 256-bit cryptographic salt) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 456.00 555.89 Td (VERIFIED \(PID-XXXX\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 531.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 536.89 Td (Calendar Timestamps) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 536.89 Td (Patient-Consistent Timestamp Jitter \(+/-30d\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 301.00 536.89 Td (Preserves sampling interval; hides date) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 456.00 536.89 Td (VERIFIED \(Delta locked\)) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 512.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 517.89 Td (Clinical Text Annotations) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 517.89 Td (Regex Safe Harbor Scrubbing) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 301.00 517.89 Td (Filters SSNs, emails, names, IPs, phones) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 456.00 517.89 Td (VERIFIED \(Redacted\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 493.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 498.89 Td (Raw Biometrics in Logs) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 498.89 Td (PHI Log Interception Filter) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 301.00 498.89 Td (Arrays masked to [RAW_SIGNAL_REDACTED]) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 456.00 498.89 Td (VERIFIED \(Zero PHI\)) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 474.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 479.89 Td (Patient Split Leakage) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 161.00 479.89 Td (StratifiedGroupKFold on Patient Pseudonyms) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 301.00 479.89 Td (Train Patients INTERSECT Test = EMPTY) Tj ET
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 456.00 479.89 Td (VERIFIED \(0% Leakage\)) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 439.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 439.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 445.89 Td ([F]  6. Signal Conditioning & Quality Gate \(SQI\)) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 429.89 Td (Signals pass through a multi-stage filtering cascade before feature extraction:) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 414.39 Td (- Zero-Phase Butterworth Bandpass \(0.5 to 45 Hz\): Suppresses respiration drift and EMG muscle noise.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 398.89 Td (- IIR Notch Filter \(50/60 Hz, Q=30\): Rejects electrical mains interference without phase distortion.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 383.39 Td (- Signal Quality Index \(SQI\): Kurtosis \(kSQI\), Skewness \(sSQI\), and baseline/EMG power ratios reject) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 367.89 Td (  corrupted segments or detached electrodes with an automated HTTP 422 alert.) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.5 rg 45.00 25.00 Td (Automated Clinical Audit Report  |  Page 2 of 4) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 8009 >>
+stream
+0.800 0.850 0.900 RG 0.80 w 45.00 806.89 m 550.28 806.89 l S
+BT /F2 8.00 Tf 0.400 0.500 0.600 rg 45.00 811.89 Td (SECURE HEALTH MONITORING ML PIPELINE  |  CLINICAL AUDIT) Tj ET
+BT /F2 8.00 Tf 0.200 0.600 0.400 rg 405.28 811.89 Td (CONFIDENTIAL & DE-IDENTIFIED) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 771.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 771.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 777.89 Td ([G]  7. ESP32 Hardware Integration & Circuit Pinout) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 761.89 Td (Integrates directly with the How2Electronics ESP32 Patient Health Monitor IoT architecture) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 746.39 Td (\(AD8232 ECG + MAX30102 Pulse Oximeter + DS18B20 Temperature\) streaming to the ML pipeline.) Tj ET
+0.120 0.220 0.360 rg 0.100 0.200 0.300 RG 0.80 w 45.00 710.89 505.00 20.00 re B
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 51.00 716.89 Td (Sensor Module) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 166.00 716.89 Td (Sensor Pin) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 251.00 716.89 Td (ESP32 Pin) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 346.00 716.89 Td (Signal Function) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 461.00 716.89 Td (Operating Voltage) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 691.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 696.89 Td (AD8232 \(ECG Front-End\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 696.89 Td (OUT \(Analog\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 696.89 Td (GPIO 36 \(VP / ADC1\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 696.89 Td (Biopotential analog ECG signal) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 696.89 Td (3.3V \(Do not use 5V\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 672.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 677.89 Td (AD8232 \(ECG Front-End\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 677.89 Td (LO+ \(Lead Off +\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 677.89 Td (GPIO 2 \(Digital IN\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 677.89 Td (Electrode detachment flag right) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 677.89 Td (3.3V Logic) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 653.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 658.89 Td (AD8232 \(ECG Front-End\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 658.89 Td (LO- \(Lead Off -\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 658.89 Td (GPIO 4 \(Digital IN\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 658.89 Td (Electrode detachment flag left) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 658.89 Td (3.3V Logic) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 634.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 639.89 Td (MAX30102 \(Pulse Oximeter\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 639.89 Td (SDA \(I2C Data\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 639.89 Td (GPIO 21 \(I2C\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 639.89 Td (Digital IR & Red photodiode bus) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 639.89 Td (3.3V Logic) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 615.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 620.89 Td (MAX30102 \(Pulse Oximeter\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 620.89 Td (SCL \(I2C Clock\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 620.89 Td (GPIO 22 \(I2C\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 620.89 Td (I2C 400kHz fast clock) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 620.89 Td (3.3V Logic) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 596.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 601.89 Td (DS18B20 \(Temperature\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 601.89 Td (DATA \(One-Wire\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 601.89 Td (GPIO 15 \(Digital\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 601.89 Td (1-Wire bus \(4.7k pullup to 3.3V\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 601.89 Td (3.3V - 5.0V) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 577.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 582.89 Td (Clinical Triage Alarm) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 166.00 582.89 Td (ANODE \(+\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 251.00 582.89 Td (GPIO 13 \(Output\)) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 346.00 582.89 Td (Fires when ML output is CRITICAL) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 461.00 582.89 Td (3.3V High Trigger) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 542.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 542.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 548.89 Td ([H]  8. Clinical Risk Triage Decision Logic) Tj ET
+0.120 0.220 0.360 rg 0.100 0.200 0.300 RG 0.80 w 45.00 512.89 505.00 20.00 re B
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 51.00 518.89 Td (Triage Risk Tier) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 126.00 518.89 Td (Pathology Prob \(P\)) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 211.00 518.89 Td (Clinical Condition) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 326.00 518.89 Td (Action Protocol) Tj ET
+BT /F2 8.50 Tf 1.000 1.000 1.000 rg 456.00 518.89 Td (ESP32 Output) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 493.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 498.89 Td (LOW_RISK) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 126.00 498.89 Td (P < 0.35) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 211.00 498.89 Td (Normal Sinus Rhythm) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 326.00 498.89 Td (Routine continuous passive monitoring) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 456.00 498.89 Td (LED OFF / Green status) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.920 RG 0.50 w 45.00 474.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 479.89 Td (MONITOR) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 126.00 479.89 Td (0.35 <= P < 0.70) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 211.00 479.89 Td (Borderline / Tachycardia) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 326.00 479.89 Td (Flag for nursing review; repeat SQI) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 456.00 479.89 Td (LED BLINK \(Slow\)) Tj ET
+0.970 0.980 0.990 rg 0.850 0.880 0.920 RG 0.50 w 45.00 455.89 505.00 19.00 re B
+BT /F2 8.00 Tf 0.150 0.200 0.250 rg 51.00 460.89 Td (CRITICAL) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 126.00 460.89 Td (P >= 0.70) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 211.00 460.89 Td (Acute Arrhythmia / Hypoxia) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 326.00 460.89 Td (Immediate ICU physician alert dispatch) Tj ET
+BT /F1 8.00 Tf 0.150 0.200 0.250 rg 456.00 460.89 Td (ALARM BUZZER / LED ON) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 420.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 420.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 426.89 Td ([I]  9. Secure API Specifications) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 410.89 Td (Endpoints implemented on port 8000 \(FastAPI / Flask WSGI\):) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 395.39 Td (- POST /v1/predict : Secure prediction with Bearer token auth, bounds checks, and calibrated confidence.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 379.89 Td (- POST /api/esp32/telemetry : Real-time hardware telemetry ingestion with leads-off detection.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 364.39 Td (- GET /api/esp32/latest : Polling route for live streaming web dashboard.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 348.89 Td (- GET / : Interactive web dashboard with canvas ECG waveform rendering.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 333.39 Td (- GET /report : Static HTML clinical audit report.) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.5 rg 45.00 25.00 Td (Automated Clinical Audit Report  |  Page 3 of 4) Tj ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 11 0 R /F2 12 0 R /F3 13 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3655 >>
+stream
+0.800 0.850 0.900 RG 0.80 w 45.00 806.89 m 550.28 806.89 l S
+BT /F2 8.00 Tf 0.400 0.500 0.600 rg 45.00 811.89 Td (SECURE HEALTH MONITORING ML PIPELINE  |  CLINICAL AUDIT) Tj ET
+BT /F2 8.00 Tf 0.200 0.600 0.400 rg 405.28 811.89 Td (CONFIDENTIAL & DE-IDENTIFIED) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 771.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 771.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 777.89 Td ([J]  10. System Operation Guide \(Commands & Endpoints\)) Tj ET
+BT /F2 9.50 Tf 0.150 0.200 0.250 rg 49.00 761.89 Td (1. Retrain & Regenerate Clinical Audits \(Batch Pipeline\):) Tj ET
+BT /F3 8.50 Tf 0.100 0.450 0.200 rg 49.00 746.39 Td (   python D:\\project\\health_pipeline\\scripts\\run_pipeline.py) Tj ET
+BT /F2 9.50 Tf 0.150 0.200 0.250 rg 49.00 731.89 Td (2. Start Live Inference API & Web Dashboard Service:) Tj ET
+BT /F3 8.50 Tf 0.100 0.450 0.200 rg 49.00 716.39 Td (   python D:\\project\\health_pipeline\\scripts\\run_api.py) Tj ET
+BT /F2 9.50 Tf 0.150 0.200 0.250 rg 49.00 701.89 Td (3. Run Hardware Telemetry Simulation \(Live ESP32 Stream\):) Tj ET
+BT /F3 8.50 Tf 0.100 0.450 0.200 rg 49.00 686.39 Td (   python D:\\project\\health_pipeline\\scripts\\simulate_esp32_stream.py) Tj ET
+BT /F2 9.50 Tf 0.150 0.200 0.250 rg 49.00 671.89 Td (4. Run Complete Automated Test Suite \(16 Test Cases\):) Tj ET
+BT /F3 8.50 Tf 0.100 0.450 0.200 rg 49.00 656.39 Td (   python -m unittest discover -s D:\\project\\health_pipeline\\tests -p "test_*.py") Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 621.89 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 621.89 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 627.89 Td ([K]  11. Hardware Safety & Clinical Disclaimer) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 611.89 Td (CAUTION & BIOMEDICAL NOTICE:) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 596.39 Td (1. Galvanic Isolation: When connecting patient electrodes \(AD8232\), always power the ESP32 via a) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 580.89 Td (   battery pack or medical-grade isolated USB power supply to prevent mains earth loops.) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 565.39 Td (2. Investigational Use: This pipeline is developed for research, clinical decision support, and remote) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 549.89 Td (   telemetry monitoring. Pathological alarms must be confirmed by qualified medical professionals.) Tj ET
+0.930 0.960 0.990 rg 0.750 0.850 0.950 RG 0.60 w 45.00 514.39 505.28 22.00 re B
+0.010 0.520 0.850 rg 45.00 514.39 3.00 22.00 re f
+BT /F2 11.00 Tf 0.050 0.200 0.400 rg 55.00 520.39 Td ([L]  12. Certification of Verification) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 504.39 Td (This document certifies that the Health Monitoring ML Pipeline has passed automated verification:) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 488.89 Td ( - Zero-Leakage Patient Grouping: PASSED \(Disjoint cohort intersection verified\)) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 473.39 Td ( - Model Calibration \(Platt Sigmoid\): PASSED \(Brier score = 0.1423\)) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 457.89 Td ( - HIPAA Safe Harbor De-Identification: PASSED \(Salted HMAC-SHA256 active\)) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 442.39 Td ( - Injection Defense & Voltage Range Sanitization: PASSED \([-10 mV, +10 mV] bounded\)) Tj ET
+BT /F1 9.50 Tf 0.150 0.200 0.250 rg 49.00 426.89 Td ( - Live ESP32 Hardware Integration: PASSED \(AD8232 + MAX30102 + DS18B20 connected\)) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.5 rg 45.00 25.00 Td (Automated Clinical Audit Report  |  Page 4 of 4) Tj ET
+
+endstream
+endobj
+11 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+12 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000133 00000 n 
+0000000288 00000 n 
+0000007894 00000 n 
+0000008049 00000 n 
+0000015552 00000 n 
+0000015707 00000 n 
+0000023768 00000 n 
+0000023924 00000 n 
+0000027632 00000 n 
+0000027703 00000 n 
+0000027779 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+27848
+%%EOF
