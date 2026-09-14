@@ -4,6 +4,14 @@ Model training harness with class imbalance mitigation, patient-isolated cross-v
 hyperparameter optimization, and privacy-preserving training telemetry.
 """
 
+import sys
+from pathlib import Path
+
+# Ensure project root is in sys.path for direct execution
+_project_root = Path(__file__).resolve().parent.parent.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 import numpy as np

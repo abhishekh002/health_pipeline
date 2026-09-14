@@ -10,7 +10,15 @@ Features:
 - Complete masking of internal model architecture and server traces
 """
 
+import os
+import sys
 from pathlib import Path
+
+# Ensure project root is in sys.path for direct execution
+_project_root = Path(__file__).resolve().parent.parent.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 from typing import Any, Dict, Optional
 import flask
 from flask import Flask, jsonify, request
@@ -68,7 +76,10 @@ def create_app(model_path: Optional[str] = None) -> Flask:
     def index():
         dashboard_path = Path(__file__).parent / "dashboard.html"
         if dashboard_path.exists():
-            return dashboard_path.read_text(encoding="utf-8"), 200, {"Content-Type": "text/html"}
+            html_content = dashboard_path.read_text(encoding="utf-8")
+            if SECURITY_CONFIG.API_AUTH_TOKEN != "health_sec_token_9f83a2c0918bd47e":
+                html_content = html_content.replace("health_sec_token_9f83a2c0918bd47e", SECURITY_CONFIG.API_AUTH_TOKEN)
+            return html_content, 200, {"Content-Type": "text/html"}
         return "Physiological Health Monitoring API is running. Go to /report for evaluation.", 200
 
     @app.route("/report", methods=["GET"])
@@ -434,3 +445,12 @@ def create_app(model_path: Optional[str] = None) -> Flask:
         return jsonify(response_payload), 200
 
     return app
+
+
+if __name__ == "__main__":
+    host = os.getenv("API_HOST", "0.0.0.0")
+    port = int(os.getenv("API_PORT", 8000))
+    app = create_app()
+    print(f"Starting Secure Health Pipeline API on http://127.0.0.1:{port} (and http://localhost:{port})")
+    print(f"Auth Token: {SECURITY_CONFIG.API_AUTH_TOKEN}")
+    app.run(host=host, port=port, debug=False)
