@@ -283,3 +283,51 @@ health_pipeline.api.schemas.APIValidationError: Request payload must be valid JS
 2026-09-13 19:57:02 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
 2026-09-13 19:57:14 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
 2026-09-13 21:06:00 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-13 21:09:56 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:09:58 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:16 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:19 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:20 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:25 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:26 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:28 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:29 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:32 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:36 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:37 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:37 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:10:39 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 21:11:04 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:56:00 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:56:00 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:56:11 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:56:12 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:56:14 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:57:07 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 22:57:21 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 23:03:49 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 23:27:52 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 23:27:53 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 23:28:01 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 23:28:03 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-13 23:28:06 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 14:57:08 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 14:58:37 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 14:58:39 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 14:59:36 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:00:22 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:05:54 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:06:28 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:06:34 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:08:20 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:09:00 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:09:38 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:10:34 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:11:39 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:13:34 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:15:18 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:15:21 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:17:27 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:17:39 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-14 15:23:39 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-14 15:44:35 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
