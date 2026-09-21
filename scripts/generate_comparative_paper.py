@@ -30,9 +30,9 @@ PAPER_MARKDOWN = """# Edge-Deployable Multi-Modal Physiological Telemetry and Ca
 
 Ambulatory physiological telemetry requires rapid, accurate identification of life-threatening cardiac arrhythmias while safeguarding patient privacy and operating under constrained embedded hardware budgets. While deep neural networks—such as 34-layer residual networks and complex convolutional architectures—demonstrate state-of-the-art diagnostic discrimination on public benchmarks, their extreme computational footprint (tens of millions of parameters, >100 MB model size, and GPU dependency) precludes continuous bedside execution on IoT microcontrollers. In this study, we present **CardioGuard**, an edge-deployable, privacy-preserving machine learning pipeline for real-time cardiac arrhythmia detection and multi-modal vital sign triage. The framework pairs a low-latency 26-dimensional physiological feature extractor (capturing Pan-Tompkins time- and frequency-domain heart rate variability, spectral entropy, and pulse oximeter dynamics) with a cost-sensitive, Platt-calibrated `HistGradientBoostingClassifier`. 
 
-Evaluated under strict 5-fold patient-isolated cross-validation on the gold-standard MIT-BIH Arrhythmia Database (enforcing zero patient overlap between train and test splits), our proposed architecture achieves an exceptional **Mean AUC-ROC of 0.9883 ± 0.0167**, a **Mean Sensitivity of 98.29%**, a **Mean Specificity of 93.97%**, and a **Mean F1-Score of 0.9842**. Compared directly against published deep learning benchmarks including Hannun et al. (Nature Medicine, 2019; AUC 0.97, 30M params) and Kachuee et al. (IEEE JBHI, 2018; Accuracy 93.4%, 15 MB), CardioGuard achieves superior diagnostic discrimination while delivering a **>300-fold reduction in model footprint (48 KB)** and an average single-window inference latency of **< 3.8 ms** on commodity edge hardware. Furthermore, the pipeline integrates an autonomous, real-time Clinical AI Agent capable of contextual differential diagnosis and immediate intervention guidance, presenting a viable paradigm for resilient, bedside critical care telemetry.
+Evaluated under strict 5-fold patient-isolated cross-validation on the gold-standard MIT-BIH Arrhythmia Database (enforcing zero patient overlap between train and test splits), our proposed architecture achieves an exceptional **Mean AUC-ROC of 0.9883 ± 0.0167**, a **Mean Sensitivity of 98.29%**, a **Mean Specificity of 93.97%**, and a **Mean F1-Score of 0.9842**. Compared directly against published deep learning benchmarks including Hannun et al. (Nature Medicine, 2019; AUC 0.97, 30M params) and Kachuee et al. (IEEE JBHI, 2018; Accuracy 93.4%, 15 MB), CardioGuard achieves superior diagnostic discrimination while delivering a **>300-fold reduction in model footprint (48 KB)** and an average single-window inference latency of **< 3.8 ms** on commodity edge hardware, presenting a viable paradigm for resilient, bedside critical care telemetry.
 
-**Keywords:** Electrocardiogram (ECG), Arrhythmia Detection, Heart Rate Variability (HRV), MIT-BIH Benchmark, Edge Machine Learning, Platt Calibration, Embedded IoT, Clinical AI Agent.
+**Keywords:** Electrocardiogram (ECG), Arrhythmia Detection, Heart Rate Variability (HRV), MIT-BIH Benchmark, Edge Machine Learning, Platt Calibration, Embedded IoT.
 
 ---
 
@@ -42,7 +42,7 @@ Cardiovascular diseases (CVDs) remain the leading cause of mortality worldwide, 
 1. **Severe False Alarm Rates**: Up to 88% of clinical telemetry alarms are false positives, resulting in cognitive overload and severe "alarm fatigue" among nursing and medical staff.
 2. **Cloud Dependency & Hardware Inefficiency**: Modern deep learning algorithms for arrhythmia detection rely on multi-layer convolutional neural networks (CNNs) or recurrent architectures deployed in the cloud, introducing latency bottlenecks, single-point communication failures, and severe Health Insurance Portability and Accountability Act (HIPAA) privacy risks.
 
-To address these challenges, we introduce an end-to-end, edge-deployable framework that couples an ultra-low-power ESP32 IoT sensor front-end (capturing AD8232 ECG, MAX30102 SpO2/PPG, and DS18B20 temperature) with a calibrated gradient-boosted decision tree pipeline and an autonomous Clinical AI Copilot. The principal contributions of this paper are:
+To address these challenges, we introduce an end-to-end, edge-deployable framework that couples an ultra-low-power ESP32 IoT sensor front-end (capturing AD8232 ECG, MAX30102 SpO2/PPG, and DS18B20 temperature) with a calibrated gradient-boosted decision tree pipeline. The principal contributions of this paper are:
 - **Zero-Data-Leakage Validation**: Validation strictly enforced on patient-grouped partitions ($Train \\cap Test = \\emptyset$), addressing widespread over-optimistic performance reporting in literature caused by random heartbeat-level data leakage.
 - **Ultra-Compact Footprint**: Demonstration of a 48 KB calibrated model executing in under 4 ms per inference window, achieving higher discrimination than heavy deep learning networks.
 - **Multi-Modal Biomarker Synthesis**: Simultaneous fusion of 26 ECG morphological, HRV autonomic, and pulse oximetry metrics.
@@ -142,16 +142,7 @@ In accordance with ethical AI in healthcare and the Equal Employment Opportunity
 
 ---
 
-## 7. Clinical AI Agent Integration
-
-Unlike static classifiers that output only a discrete class integer, CardioGuard features an integrated **Clinical AI Agent** (`ClinicalAIAgent`). Operating directly on the calibrated probability output and extracted 26-dimensional biomarker vector, the agent generates:
-1. **Diagnostic Rationale**: Automated interpretation of abnormal ventricular repolarization, tachycardia thresholds, and vagal tone collapse.
-2. **Actionable Emergency Protocols**: Instant guidance on airway management, high-flow oxygen titration, non-rebreather mask application, and defibrillator preparation.
-3. **Conversational Clinical Support**: Real-time natural language query answering for attending nurses and physicians via interactive REST endpoints (`POST /api/agent/chat`).
-
----
-
-## 8. Conclusion
+## 7. Conclusion
 
 This paper demonstrates that carefully engineered, multi-modal physiological feature representations combined with calibrated gradient-boosted ensembles can match and exceed the diagnostic discrimination of 34-layer deep neural networks on the MIT-BIH Arrhythmia Database. Achieving a **Mean AUC-ROC of 0.9883** and **Sensitivity of 98.29%** with a **48 KB model footprint** and **< 3.8 ms inference latency**, CardioGuard enables resilient, privacy-compliant, edge-native cardiac monitoring on low-cost IoT hardware. Future work will investigate multi-center clinical trials and extension to 12-lead diagnostic ambulatory arrays.
 
@@ -266,14 +257,7 @@ def build_research_paper_docx(output_path: Path):
         "are scaled via Platt sigmoid calibration P(y=1|f) = 1 / (1 + exp(A*f + B)), achieving a Brier score of 0.1423."
     )
 
-    builder.add_heading_1("5. Autonomous Clinical AI Agent Integration")
-    builder.add_paragraph(
-        "Unlike conventional classifiers that yield only a scalar probability, CardioGuard embeds an autonomous Clinical AI Agent. "
-        "The agent synthesizes biometric trends and calibrated probabilities to generate real-time diagnostic rationales, priority "
-        "emergency checklists (airway, high-flow O2, IV access, defibrillator readiness), and interactive natural language telemetry answers."
-    )
-
-    builder.add_heading_1("6. Conclusion")
+    builder.add_heading_1("5. Conclusion")
     builder.add_paragraph(
         "Our findings demonstrate that multi-modal physiological feature engineering combined with calibrated gradient boosting "
         "surpasses 34-layer deep neural networks on the MIT-BIH benchmark (AUC: 0.9883 vs 0.970) while slashing model size by 2,580x "

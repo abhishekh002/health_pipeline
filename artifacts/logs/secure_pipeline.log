@@ -331,3 +331,132 @@ health_pipeline.api.schemas.APIValidationError: Request payload must be valid JS
 2026-09-14 15:17:39 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
 2026-09-14 15:23:39 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
 2026-09-14 15:44:35 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 12:17:01 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-15 12:18:27 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-15 12:18:34 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 12:19:09 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 12:19:11 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 12:19:12 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 12:19:16 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 12:19:27 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-15 17:34:14 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-19 01:40:22 [INFO] [health_pipeline.orchestrator] ======================================================================
+2026-09-19 01:40:22 [INFO] [health_pipeline.orchestrator] STARTING SECURE PHYSIOLOGICAL HEALTH MONITORING ML PIPELINE
+2026-09-19 01:40:22 [INFO] [health_pipeline.orchestrator] ======================================================================
+2026-09-19 01:40:22 [INFO] [health_pipeline.orchestrator] [STAGE 1] Ingesting physiological records with HIPAA Safe Harbor de-identification...
+2026-09-19 01:40:22 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:22 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 101 -> Pseudonym: PID-EDF14F019C8A8CFC | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:22 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 102 -> Pseudonym: PID-7190E4F3D5CCC0FB | Channels: ['V5', 'V2'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:22 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 103 -> Pseudonym: PID-B7D3B2F6BFCCECE4 | Channels: ['MLII', 'V2'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:23 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 104 -> Pseudonym: PID-79B54F00ADD64ED7 | Channels: ['V5', 'V2'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:23 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 105 -> Pseudonym: PID-E6839C5AD7DE3424 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:23 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:23 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 107 -> Pseudonym: PID-C06746C3736C4E24 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:23 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 108 -> Pseudonym: PID-CFF083E61DECACD5 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:24 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 109 -> Pseudonym: PID-F58341BF39DF8E8E | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:24 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 111 -> Pseudonym: PID-95C6F3474646CB1E | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:24 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 112 -> Pseudonym: PID-F9A94E6534A618A2 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:24 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 113 -> Pseudonym: PID-730CC578E985433C | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:24 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 114 -> Pseudonym: PID-F43AA4B0F67E863F | Channels: ['V5', 'MLII'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:25 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 115 -> Pseudonym: PID-A3BD00BA7865DBA8 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 65000
+2026-09-19 01:40:25 [INFO] [health_pipeline.orchestrator] Loaded 19 de-identified Patient [REDACTED_NAME].
+2026-09-19 01:40:25 [INFO] [health_pipeline.orchestrator] [STAGE 2] Preprocessing signals, evaluating SQI, and extracting clinical features...
+2026-09-19 01:40:36 [INFO] [health_pipeline.orchestrator] Preprocessed 547 clinical windows (547 accepted SQI, 22 rejected SQI). Class balance: [232 315]
+2026-09-19 01:40:36 [INFO] [health_pipeline.orchestrator] [STAGE 3] Partitioning dataset into patient-isolated Train / Validation / Test splits...
+2026-09-19 01:40:36 [INFO] [health_pipeline.preprocessing.splitter] Zero-leakage verified: Train (12 patients), Val (2 patients), Test (3 patients) - No overlap.
+2026-09-19 01:40:36 [INFO] [health_pipeline.orchestrator] Splits Created: Train=372, Val=70, Test=105
+2026-09-19 01:40:36 [INFO] [health_pipeline.orchestrator] [STAGE 4] Training calibrated classifier with class imbalance mitigation...
+2026-09-19 01:40:36 [INFO] [health_pipeline.models.train] Starting 5-fold Patient-Grouped Cross-Validation...
+2026-09-19 01:40:38 [INFO] [health_pipeline.models.train] [CV Fold 1/5] Validation AUC: 1.0000 | Sensitivity: 1.0000 | Specificity: 1.0000 | F1: 1.0000
+2026-09-19 01:40:41 [INFO] [health_pipeline.models.train] [CV Fold 2/5] Validation AUC: 1.0000 | Sensitivity: 0.9714 | Specificity: 1.0000 | F1: 0.9855
+2026-09-19 01:40:43 [INFO] [health_pipeline.models.train] [CV Fold 3/5] Validation AUC: 0.9974 | Sensitivity: 0.9714 | Specificity: 1.0000 | F1: 0.9855
+2026-09-19 01:40:45 [INFO] [health_pipeline.models.train] [CV Fold 4/5] Validation AUC: 1.0000 | Sensitivity: 1.0000 | Specificity: 1.0000 | F1: 1.0000
+2026-09-19 01:40:48 [INFO] [health_pipeline.models.train] [CV Fold 5/5] Validation AUC: 0.9571 | Sensitivity: 0.9429 | Specificity: 0.9714 | F1: 0.9565
+2026-09-19 01:40:48 [INFO] [health_pipeline.models.train] [CV Summary] Mean AUC: 0.9909 ± 0.0169 | Mean Sensitivity: 0.9771 | Mean Specificity: 0.9943 | Mean F1: 0.9855
+2026-09-19 01:40:48 [INFO] [health_pipeline.models.train] Executing patient-isolated hyperparameter search...
+2026-09-19 01:40:51 [INFO] [health_pipeline.models.train] Params {'learning_rate': 0.05, 'max_iter': 100, 'max_depth': 4} -> Mean Validation AUC: 0.9846
+2026-09-19 01:40:55 [INFO] [health_pipeline.models.train] Params {'learning_rate': 0.08, 'max_iter': 120, 'max_depth': 5} -> Mean Validation AUC: 0.9873
+2026-09-19 01:40:58 [INFO] [health_pipeline.models.train] Params {'learning_rate': 0.1, 'max_iter': 150, 'max_depth': 6} -> Mean Validation AUC: 0.9852
+2026-09-19 01:40:58 [INFO] [health_pipeline.models.train] Optimal Hyperparameters selected: {'learning_rate': 0.08, 'max_iter': 120, 'max_depth': 5} (Score: 0.9873)
+2026-09-19 01:40:58 [INFO] [health_pipeline.models.classifier] Fitting model on 372 samples with 26 features...
+2026-09-19 01:40:59 [INFO] [health_pipeline.models.classifier] Model fitting and calibration complete.
+2026-09-19 01:40:59 [INFO] [health_pipeline.models.train] Final Model Validation: AUC = 0.0000 | Sensitivity = 0.0000
+2026-09-19 01:40:59 [INFO] [health_pipeline.models.classifier] Model saved to D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] [STAGE 5] Evaluating clinical performance and demographic fairness on held-out test cohort...
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] [STAGE 6] Generating de-identified evaluation report artifacts...
+2026-09-19 01:40:59 [INFO] [health_pipeline.evaluation.reporter] Generated sanitized evaluation reports in D:\project\health_pipeline\artifacts\reports: JSON, MD, HTML
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] ======================================================================
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] PIPELINE EXECUTION SUCCESSFULLY COMPLETED
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] Report Markdown: D:\project\health_pipeline\artifacts\reports\clinical_evaluation_report.md
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] Report HTML:     D:\project\health_pipeline\artifacts\reports\clinical_evaluation_report.html
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] Report JSON:     D:\project\health_pipeline\artifacts\reports\clinical_evaluation_report.json
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] Saved Model:     D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-19 01:40:59 [INFO] [health_pipeline.orchestrator] ======================================================================
+2026-09-19 01:41:30 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-19 01:41:38 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-22 02:02:19 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:02:26 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-22 02:08:00 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:08:36 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:08:36 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:08:36 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:08:36 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:08:36 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:08:38 [INFO] [health_pipeline.models.classifier] Fitting model on 150 samples with 10 features...
+2026-09-22 02:08:38 [INFO] [health_pipeline.models.classifier] Model fitting and calibration complete.
+2026-09-22 02:08:38 [INFO] [health_pipeline.preprocessing.splitter] Zero-leakage verified: Train (6 patients), Val (2 patients), Test (2 patients) - No overlap.
+2026-09-22 02:08:38 [INFO] [health_pipeline.preprocessing.splitter] Zero-leakage verified: Train (6 patients), Val (2 patients), Test (2 patients) - No overlap.
+2026-09-22 02:10:01 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:10:01 [ERROR] [health_pipeline.api.app] Exception on /v1/predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\project\health_pipeline\api\app.py", line 327, in predict_endpoint
+    pred_out = loaded_model.infer_single_sample(feature_vector)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\project\health_pipeline\models\classifier.py", line 108, in infer_single_sample
+    probas = self.predict_proba(feature_vector)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\project\health_pipeline\models\classifier.py", line 92, in predict_proba
+    return self.calibrated_model.predict_proba(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\calibration.py", line 531, in predict_proba
+    proba = calibrated_classifier.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\calibration.py", line 797, in predict_proba
+    predictions, _ = _get_response_values(
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\_response.py", line 215, in _get_response_values
+    y_pred = prediction_method(X)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\ensemble\_hist_gradient_boosting\gradient_boosting.py", line 2202, in decision_function
+    decision = self._raw_predict(X)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\ensemble\_hist_gradient_boosting\gradient_boosting.py", line 1201, in _raw_predict
+    X = self._preprocess_X(X, reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\ensemble\_hist_gradient_boosting\gradient_boosting.py", line 266, in _preprocess_X
+    return validate_data(self, X, reset=False, **check_X_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 3059, in validate_data
+    _check_n_features(_estimator, X, reset=reset)
+  File "C:\Users\study\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\utils\validation.py", line 2923, in _check_n_features
+    raise ValueError(
+ValueError: X has 3 features, but HistGradientBoostingClassifier is expecting 26 features as input.
+2026-09-22 02:10:26 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:12:37 [INFO] [health_pipeline.api] API loaded model successfully from D:\project\health_pipeline\artifacts\models\health_classifier.joblib
+2026-09-22 02:13:14 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-22 02:13:32 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600
+2026-09-22 02:13:33 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-22 02:13:42 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 106 -> Pseudonym: PID-31D8FD889BCEACC4 | Channels: ['MLII', 'V1'] | fs: 360.0 Hz | Samples: 3600
+2026-09-22 02:19:39 [INFO] [health_pipeline.data.loader] Ingested WFDB record: 100 -> Pseudonym: PID-B95C612B4CC8CEBB | Channels: ['MLII', 'V5'] | fs: 360.0 Hz | Samples: 3600

@@ -1,7 +1,7 @@
 {
   "report_metadata": {
     "title": "Physiological Health Monitoring ML Evaluation Report",
-    "generated_at_utc": "2026-09-13 13:41:02Z",
+    "generated_at_utc": "2026-09-18 20:10:59Z",
     "privacy_compliance": "HIPAA Safe Harbor De-Identified (Zero Direct PHI)",
     "pipeline_version": "1.0.0"
   },
@@ -15,10 +15,10 @@
     },
     "class_weight": "balanced",
     "cv_summary": {
-      "mean_auc": 0.9883,
-      "std_auc": 0.0167,
-      "mean_sensitivity": 0.9829,
-      "mean_specificity": 0.9397
+      "mean_auc": 0.9909,
+      "std_auc": 0.0169,
+      "mean_sensitivity": 0.9771,
+      "mean_specificity": 0.9943
     },
     "model_artifact_path": "D:\\project\\health_pipeline\\artifacts\\models\\health_classifier.joblib"
   },
@@ -66,15 +66,22 @@
     },
     {
       "attribute": "age_cohort",
-      "disparate_impact_ratio": 1.0,
-      "tpr_disparity": 0.0,
+      "disparate_impact_ratio": 0.0,
+      "tpr_disparity": 0.5143,
       "fpr_disparity": 0.0,
-      "compliant_80_percent_rule": true,
+      "compliant_80_percent_rule": false,
       "subgroups": {
         "Non-Senior (<65)": {
-          "sample_count": 105,
-          "selection_rate": 0.1714,
+          "sample_count": 70,
+          "selection_rate": 0.2571,
           "true_positive_rate": 0.5143,
+          "false_positive_rate": 0.0,
+          "specificity": 1.0
+        },
+        "Senior (>=65)": {
+          "sample_count": 35,
+          "selection_rate": 0.0,
+          "true_positive_rate": 0.0,
           "false_positive_rate": 0.0,
           "specificity": 1.0
         }

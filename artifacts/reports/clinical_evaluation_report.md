@@ -1,5 +1,5 @@
 # Physiological Health Monitoring ML Evaluation Report
-**Generated:** 2026-09-13 13:41:02Z | **Compliance:** HIPAA Safe Harbor De-Identified (Zero Direct PHI)
+**Generated:** 2026-09-18 20:10:59Z | **Compliance:** HIPAA Safe Harbor De-Identified (Zero Direct PHI)
 
 ## 1. Executive Clinical Summary
 - **Test Cohort Size:** 105 independent physiological segments
@@ -27,13 +27,14 @@
 | M | 35 | 0.0% | 0.0% | 0.0% | 100.0% |
 
 ### Subgroup Dimension: `AGE_COHORT`
-- **Disparate Impact Ratio:** `1.0000` (Pass threshold ≥ 0.80)
-- **True Positive Rate (TPR) Disparity:** `0.0000` (Equalized odds difference)
-- **80% Rule Fairness Compliance:** `PASS`
+- **Disparate Impact Ratio:** `0.0000` (Pass threshold ≥ 0.80)
+- **True Positive Rate (TPR) Disparity:** `0.5143` (Equalized odds difference)
+- **80% Rule Fairness Compliance:** `ATTENTION_REQUIRED`
 
 | Subgroup | Samples | Selection Rate | Sensitivity (TPR) | False Positive Rate | Specificity |
 |---|---|---|---|---|---|
-| Non-Senior (<65) | 105 | 17.1% | 51.4% | 0.0% | 100.0% |
+| Non-Senior (<65) | 70 | 25.7% | 51.4% | 0.0% | 100.0% |
+| Senior (>=65) | 35 | 0.0% | 0.0% | 0.0% | 100.0% |
 
 ## 4. Privacy & HIPAA Compliance Verification
 - [x] Salted HMAC-SHA256 pseudonymization applied to all subject/record IDs at ingestion.

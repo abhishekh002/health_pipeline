@@ -24,7 +24,6 @@ import flask
 from flask import Flask, jsonify, request
 import numpy as np
 
-from health_pipeline.agents.clinical_agent import ClinicalAIAgent
 from health_pipeline.api.schemas import APIValidationError, PayloadValidator
 from health_pipeline.config import PATHS, SECURITY_CONFIG
 from health_pipeline.models.classifier import PhysiologicalModelWrapper, PredictionOutput
@@ -41,7 +40,6 @@ def create_app(model_path: Optional[str] = None) -> Flask:
     """Factory creating and configuring the secure inference Flask app."""
     app = Flask(__name__)
     authenticator = Authenticator(rate_limit_per_minute=120)
-    clinical_agent = ClinicalAIAgent()
 
     # Load trained model bundle
     target_model_path = model_path or (PATHS.MODELS_DIR / "health_classifier.joblib")
@@ -238,89 +236,6 @@ def create_app(model_path: Optional[str] = None) -> Flask:
     def get_latest_esp32():
         return jsonify(latest_esp32_telemetry), 200
 
-    # Clinical AI Agent Endpoints
-    @app.route("/api/agent/analyze", methods=["POST"])
-    def agent_analyze():
-        payload = request.get_json(silent=True) or {}
-        
-        # If payload provides features/prediction use them; otherwise use latest telemetry
-        features = payload.get("features")
-        prediction = payload.get("prediction")
-        leads_off = payload.get("leads_off")
-        sqi_info = payload.get("signal_quality")
-
-        if features is None:
-            features = {
-                "mean_hr_bpm": latest_esp32_telemetry.get("bpm", 72.0),
-                "spo2_mean": latest_esp32_telemetry.get("spo2", 98.0),
-                "temperature_c": latest_esp32_telemetry.get("temperature_c", 36.6),
-                "rmssd_ms": 28.5,
-                "sdnn_ms": 34.0,
-                "lf_hf_ratio": 1.25
-            }
-        if prediction is None:
-            prediction = latest_esp32_telemetry.get("prediction", {
-                "clinical_condition": "Normal Sinus Rhythm",
-                "triage_risk_tier": "LOW_RISK",
-                "calibrated_confidence": 0.96
-            })
-        if leads_off is None:
-            leads_off = latest_esp32_telemetry.get("leads_off", False)
-
-        report = clinical_agent.analyze_patient_state(
-            features=features,
-            prediction=prediction,
-            signal_quality=sqi_info,
-            leads_off=leads_off
-        )
-
-        return jsonify({
-            "status": "SUCCESS",
-            "agent_name": clinical_agent.agent_name,
-            "report": {
-                "assessment_summary": report.assessment_summary,
-                "primary_finding": report.primary_finding,
-                "risk_level": report.risk_level,
-                "clinical_rationale": report.clinical_rationale,
-                "immediate_actions": report.immediate_actions,
-                "differential_diagnosis": report.differential_diagnosis,
-                "biomarker_breakdown": report.biomarker_breakdown
-            }
-        }), 200
-
-    @app.route("/api/agent/chat", methods=["POST"])
-    def agent_chat():
-        payload = request.get_json(silent=True) or {}
-        query = str(payload.get("query", "")).strip()
-        if not query:
-            return jsonify({
-                "status": "ERROR",
-                "message": "Query string is required."
-            }), 400
-
-        current_state = payload.get("state")
-        if not current_state:
-            current_state = {
-                "features": {
-                    "mean_hr_bpm": latest_esp32_telemetry.get("bpm", 72.0),
-                    "spo2_mean": latest_esp32_telemetry.get("spo2", 98.0),
-                    "temperature_c": latest_esp32_telemetry.get("temperature_c", 36.6),
-                    "rmssd_ms": 28.5,
-                    "lf_hf_ratio": 1.25
-                },
-                "prediction": latest_esp32_telemetry.get("prediction", {
-                    "clinical_condition": "Normal Sinus Rhythm",
-                    "triage_risk_tier": "LOW_RISK"
-                })
-            }
-
-        response_text = clinical_agent.answer_clinical_query(query, current_state)
-        return jsonify({
-            "status": "SUCCESS",
-            "agent_name": clinical_agent.agent_name,
-            "query": query,
-            "response": response_text
-        }), 200
 
     # 1. Health Check Endpoint
     @app.route("/health", methods=["GET"])

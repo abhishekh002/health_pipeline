@@ -131,142 +131,6 @@
   .log-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 10px; background: #000000; }
   .log-table th, .log-table td { border: 1px solid var(--surface-border); padding: 6px 8px; text-align: left; }
   .log-table th { background: #0e0e0e; color: #94a3b8; font-weight: 600; }
-
-  /* Clinical AI Agent Copilot Section */
-  .agent-section {
-    margin-top: 24px;
-    background: #060606;
-    border: 1px solid #0284c7;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.2);
-  }
-  .agent-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--surface-border);
-    padding-bottom: 12px;
-    margin-bottom: 16px;
-  }
-  .agent-badge {
-    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 9999px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-  }
-  .agent-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 20px;
-  }
-  .agent-panel {
-    background: #000000;
-    border: 1px solid var(--surface-border);
-    border-radius: 8px;
-    padding: 16px;
-  }
-  .agent-panel h3 {
-    font-size: 13px;
-    font-weight: 600;
-    color: #38bdf8;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .agent-list {
-    list-style: none;
-    padding: 0;
-    margin: 8px 0;
-    font-size: 12px;
-    line-height: 1.6;
-  }
-  .agent-list li {
-    padding: 5px 0;
-    border-bottom: 1px solid #141414;
-  }
-  .agent-list li:last-child {
-    border-bottom: none;
-  }
-  .chat-box {
-    display: flex;
-    flex-direction: column;
-    height: 340px;
-  }
-  .chat-history {
-    flex: 1;
-    overflow-y: auto;
-    padding: 10px;
-    background: #030303;
-    border-radius: 6px;
-    border: 1px solid var(--surface-border);
-    margin-bottom: 10px;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .chat-msg {
-    padding: 8px 12px;
-    border-radius: 8px;
-    max-width: 90%;
-    line-height: 1.4;
-  }
-  .chat-msg.user {
-    align-self: flex-end;
-    background: #0369a1;
-    color: #fff;
-    border-bottom-right-radius: 2px;
-  }
-  .chat-msg.agent {
-    align-self: flex-start;
-    background: #0c0c0c;
-    color: #e2e8f0;
-    border-left: 3px solid #0284c7;
-    border-bottom-left-radius: 2px;
-  }
-  .chip-group {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-  }
-  .chip {
-    font-size: 11px;
-    background: #111111;
-    color: #7dd3fc;
-    border: 1px solid #222222;
-    padding: 4px 10px;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .chip:hover {
-    background: #0284c7;
-    color: #fff;
-    border-color: #38bdf8;
-  }
-  .chat-input-bar {
-    display: flex;
-    gap: 8px;
-  }
-  .chat-input {
-    flex: 1;
-    background: #000000;
-    border: 1px solid #222222;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-  }
-  .chat-input:focus {
-    outline: none;
-    border-color: #38bdf8;
-  }
 </style>
 </head>
 <body>
@@ -366,78 +230,6 @@
   </div>
 </div>
 
-<!-- Clinical AI Agent Copilot Section -->
-<div class="agent-section">
-  <div class="agent-header">
-    <div style="display:flex; align-items:center; gap:10px;">
-      <span style="font-size:24px;">🤖</span>
-      <div>
-        <h2 style="font-size:16px; font-weight:700; color:#f8fafc; border:none; padding:0; margin:0;">
-          CardioGuard Clinical AI Agent Copilot
-        </h2>
-        <span style="font-size:12px; color:var(--text-muted);">Autonomous Diagnostic Reasoning & Real-Time Decision Support</span>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <span class="agent-badge">AI COPILOT ACTIVE</span>
-      <span id="agentRiskPill" style="font-size:11px; padding:3px 10px; border-radius:4px; font-weight:700; background:rgba(34,197,94,0.2); color:#4ade80;">LOW RISK</span>
-    </div>
-  </div>
-
-  <div class="agent-grid">
-    <!-- Left Column: Diagnostic Assessment & Action Protocols -->
-    <div class="agent-panel">
-      <h3><span>📋</span> Diagnostic Assessment & Findings</h3>
-      <div id="agentSummary" style="font-size:13px; font-weight:600; color:#e2e8f0; margin-bottom:8px; line-height:1.4;">
-        Normal Sinus Rhythm with healthy autonomic regulation.
-      </div>
-      
-      <div style="font-size:12px; color:#94a3b8; margin-bottom:12px;">
-        <b>Primary Finding:</b> <span id="agentFinding" style="color:#7dd3fc;">Normal Sinus Rhythm (Hemodynamically Stable)</span>
-      </div>
-
-      <h3><span>🔍</span> Diagnostic Rationale</h3>
-      <ul id="agentRationale" class="agent-list">
-        <li>&#10003; Heart rate 72.0 bpm is within healthy normal resting boundaries (60-100 bpm).</li>
-        <li>&#10003; Oxygen saturation 98.0% indicates normal arterial oxygenation.</li>
-        <li>&#10003; Autonomic tone markers reflect balanced parasympathetic/sympathetic tone.</li>
-      </ul>
-
-      <h3 style="margin-top:12px;"><span>🚨</span> Immediate Clinical Action Protocol</h3>
-      <ul id="agentActions" class="agent-list" style="color:#fef08a;">
-        <li>&bull; Continue standard continuous passive telemetry monitoring.</li>
-        <li>&bull; Maintain periodic vital sign logging every 60 seconds.</li>
-      </ul>
-
-      <h3 style="margin-top:12px;"><span>🩺</span> Differential Diagnosis</h3>
-      <div id="agentDifferentials" style="font-size:11px; color:#cbd5e1;">
-        Normal Cardiac Physiology | Physiologic Sinus Rhythm
-      </div>
-    </div>
-
-    <!-- Right Column: Interactive Clinician Dialogue / Chat -->
-    <div class="agent-panel chat-box">
-      <h3><span>💬</span> Clinician Dialogue Interface</h3>
-      <div class="chip-group">
-        <button class="chip" onclick="askAgentChip('Explain why this alert was triggered and key biomarker drivers.')">🚨 Explain Alert</button>
-        <button class="chip" onclick="askAgentChip('What is the recommended emergency treatment protocol?')">📋 Protocol</button>
-        <button class="chip" onclick="askAgentChip('Provide the differential diagnosis for this cardiac rhythm.')">🩺 Differentials</button>
-        <button class="chip" onclick="askAgentChip('Analyze Heart Rate Variability (RMSSD) and autonomic tone.')">📈 HRV Tone</button>
-      </div>
-
-      <div class="chat-history" id="chatHistory">
-        <div class="chat-msg agent">
-          <b>CardioGuard AI:</b> Hello Doctor/Nurse. I am continuously analyzing the patient's multi-parameter vitals (ECG, SpO2, Temperature, HRV). You can ask me diagnostic questions or click a quick prompt above.
-        </div>
-      </div>
-
-      <div class="chat-input-bar">
-        <input type="text" id="chatInput" class="chat-input" placeholder="Ask AI Copilot (e.g. 'Explain risk drivers', 'Protocol')..." onkeydown="if(event.key==='Enter') sendAgentQuery()">
-        <button class="primary" onclick="sendAgentQuery()">Ask AI</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
 let currentSignal = [];
@@ -623,22 +415,18 @@ async function loadPreset(type) {
       document.getElementById("vitalSpO2").innerText = "86.5%";
       document.getElementById("vitalRMSSD").innerText = "92.0";
       updateAlertSignal("CRITICAL", "Acute Ventricular Tachycardia", "Arrhythmia detected", "STAT Physician Dispatch & Defibrillator Alert");
-      fetchAgentAnalysis({mean_hr_bpm: 142.0, spo2_mean: 86.5, rmssd_ms: 92.0}, {clinical_condition: "Acute Ventricular Tachycardia", triage_risk_tier: "CRITICAL"}, false);
     } else if (type === "corrupt") {
       document.getElementById("vitalHR").innerText = "0.0";
       document.getElementById("vitalSpO2").innerText = "--";
       updateAlertSignal("LEADS_OFF", "Sensor Disconnected", "Flatline or motion artifact", "Check AD8232 Pads");
-      fetchAgentAnalysis(null, {clinical_condition: "Electrode Disconnection", triage_risk_tier: "MONITOR"}, true);
     } else if (type === "106") {
       document.getElementById("vitalHR").innerText = "118.0";
       document.getElementById("vitalSpO2").innerText = "94.0%";
       updateAlertSignal("MONITOR", "Premature Ventricular Ectopy", "Borderline Arrhythmia", "Flagged for nursing telemetry audit");
-      fetchAgentAnalysis({mean_hr_bpm: 118.0, spo2_mean: 94.0, rmssd_ms: 35.0}, {clinical_condition: "Premature Ventricular Ectopy", triage_risk_tier: "MONITOR"}, false);
     } else {
       document.getElementById("vitalHR").innerText = "72.0";
       document.getElementById("vitalSpO2").innerText = "98.0%";
       updateAlertSignal("NORMAL", "Normal Sinus Rhythm", "Patient stable", "Passive Monitoring");
-      fetchAgentAnalysis({mean_hr_bpm: 72.0, spo2_mean: 98.0, rmssd_ms: 25.0}, {clinical_condition: "Normal Sinus Rhythm", triage_risk_tier: "LOW_RISK"}, false);
     }
 
     drawWaveform(currentSignal);
@@ -700,156 +488,18 @@ async function runInference() {
       } else {
         updateAlertSignal("NORMAL", pred.clinical_condition, "Normal sinus rhythm", "Routine Monitoring");
       }
-
-      // Autonomous Clinical AI Agent Assessment
-      fetchAgentAnalysis(vitals, pred, false);
     } else if (res.status === 422) {
       document.getElementById("resStatus").innerText = "REJECTED (Low Quality Signal)";
       document.getElementById("resDetails").innerText = `${data.rejection_reason} | SQI: ${data.quality_score}`;
       banner.classList.add("REJECTED");
       document.getElementById("signalStatus").innerText = "Rejected by SQI Safeguard";
       updateAlertSignal("LEADS_OFF", "SQI Rejection", data.rejection_reason, "Check Electrode Contact");
-      fetchAgentAnalysis(null, {clinical_condition: "SQI Rejection / Artifact", triage_risk_tier: "MONITOR"}, true);
     }
   } catch (e) {
     alert("Inference failed: " + e.message);
   }
 }
 
-// Clinical AI Agent Copilot Functions
-let latestAgentReport = null;
-
-async function fetchAgentAnalysis(vitals, pred, leadsOff) {
-  try {
-    const hr = vitals && vitals.heart_rate_bpm ? vitals.heart_rate_bpm : (parseFloat(document.getElementById("vitalHR").innerText) || 72.0);
-    const spo2 = vitals && vitals.spo2_percent ? vitals.spo2_percent : (parseFloat(document.getElementById("vitalSpO2").innerText) || 98.0);
-    const rmssd = vitals && vitals.rmssd_ms ? vitals.rmssd_ms : (parseFloat(document.getElementById("vitalRMSSD").innerText) || 25.0);
-    const temp = vitals && vitals.temperature_c ? vitals.temperature_c : (parseFloat(document.getElementById("vitalTemp").innerText) || 36.6);
-    
-    const condition = pred && pred.clinical_condition ? pred.clinical_condition : (document.getElementById("resStatus").innerText || "Normal Sinus Rhythm");
-    const tier = pred && pred.triage_risk_tier ? pred.triage_risk_tier : (currentAlertLevel || "LOW_RISK");
-    const conf = pred && pred.calibrated_confidence ? pred.calibrated_confidence : 0.95;
-
-    const res = await fetch("/api/agent/analyze", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        features: {
-          mean_hr_bpm: hr,
-          spo2_mean: spo2,
-          temperature_c: temp,
-          rmssd_ms: rmssd,
-          sdnn_ms: 34.0,
-          lf_hf_ratio: 1.25
-        },
-        prediction: {
-          clinical_condition: condition,
-          triage_risk_tier: tier,
-          calibrated_confidence: conf
-        },
-        leads_off: Boolean(leadsOff)
-      })
-    });
-
-    const data = await res.json();
-    if (data && data.status === "SUCCESS") {
-      const rep = data.report;
-      latestAgentReport = rep;
-
-      document.getElementById("agentSummary").innerText = rep.assessment_summary;
-      document.getElementById("agentFinding").innerText = rep.primary_finding;
-
-      const riskPill = document.getElementById("agentRiskPill");
-      riskPill.innerText = rep.risk_level;
-      if (rep.risk_level === "CRITICAL") {
-        riskPill.style.background = "rgba(239,68,68,0.25)";
-        riskPill.style.color = "#ef4444";
-      } else if (rep.risk_level === "MONITOR") {
-        riskPill.style.background = "rgba(245,158,11,0.25)";
-        riskPill.style.color = "#f59e0b";
-      } else {
-        riskPill.style.background = "rgba(34,197,94,0.2)";
-        riskPill.style.color = "#4ade80";
-      }
-
-      // Diagnostic Rationale
-      const ratList = document.getElementById("agentRationale");
-      ratList.innerHTML = rep.clinical_rationale.map(r => `<li>&#10003; ${r}</li>`).join("");
-
-      // Action protocol
-      const actList = document.getElementById("agentActions");
-      actList.innerHTML = rep.immediate_actions.map(a => `<li>&bull; ${a}</li>`).join("");
-
-      // Differentials
-      document.getElementById("agentDifferentials").innerText = rep.differential_diagnosis.join(" | ");
-    }
-  } catch (err) {
-    console.warn("AI Agent analysis error:", err);
-  }
-}
-
-async function sendAgentQuery(customQuery) {
-  const inputEl = document.getElementById("chatInput");
-  const query = customQuery || inputEl.value.trim();
-  if (!query) return;
-  if (!customQuery) inputEl.value = "";
-
-  const hist = document.getElementById("chatHistory");
-  
-  // User bubble
-  const userDiv = document.createElement("div");
-  userDiv.className = "chat-msg user";
-  userDiv.innerText = query;
-  hist.appendChild(userDiv);
-  hist.scrollTop = hist.scrollHeight;
-
-  // Loading indicator
-  const loadDiv = document.createElement("div");
-  loadDiv.className = "chat-msg agent";
-  loadDiv.innerText = "CardioGuard AI is reasoning...";
-  hist.appendChild(loadDiv);
-  hist.scrollTop = hist.scrollHeight;
-
-  try {
-    const hr = parseFloat(document.getElementById("vitalHR").innerText) || 72;
-    const spo2 = parseFloat(document.getElementById("vitalSpO2").innerText) || 98;
-    const cond = document.getElementById("resStatus").innerText || "Normal Sinus Rhythm";
-    
-    const res = await fetch("/api/agent/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: query,
-        state: {
-          features: {
-            mean_hr_bpm: hr,
-            spo2_mean: spo2,
-            temperature_c: parseFloat(document.getElementById("vitalTemp").innerText) || 36.6,
-            rmssd_ms: parseFloat(document.getElementById("vitalRMSSD").innerText) || 25,
-            lf_hf_ratio: 1.2
-          },
-          prediction: {
-            clinical_condition: cond,
-            triage_risk_tier: currentAlertLevel || "LOW_RISK"
-          }
-        }
-      })
-    });
-    const data = await res.json();
-    if (data && data.status === "SUCCESS") {
-      loadDiv.innerHTML = `<b>CardioGuard AI:</b><br>${data.response.replace(/\n/g, "<br>").replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")}`;
-    } else {
-      loadDiv.innerText = "Error: " + (data.message || "Could not query agent.");
-    }
-  } catch (err) {
-    loadDiv.innerText = "Communication error with AI Agent: " + err.message;
-  }
-  hist.scrollTop = hist.scrollHeight;
-}
-
-function askAgentChip(promptText) {
-  sendAgentQuery(promptText);
-}
 
 // ESP32 Live Telemetry Poller
 function toggleEsp32LiveStream() {
@@ -881,7 +531,6 @@ function startEsp32Polling() {
       if (data.leads_off) {
         document.getElementById("hwLeadsStatus").innerHTML = "<span style='color:#ef4444;'>&#9888; Electrodes Detached (LO+/LO-)</span>";
         updateAlertSignal("LEADS_OFF", "Electrode Detached", "LO+/LO- triggered", "Check Electrode Pads");
-        fetchAgentAnalysis({bpm: data.bpm, spo2: data.spo2, temperature_c: data.temperature_c}, data.prediction, true);
       } else {
         document.getElementById("hwLeadsStatus").innerHTML = "<span style='color:#22c55e;'>&#10003; Leads Attached</span>";
       }
@@ -901,7 +550,6 @@ function startEsp32Polling() {
         } else {
           updateAlertSignal("NORMAL", pred.clinical_condition, "Stable", "Passive Monitoring");
         }
-        fetchAgentAnalysis({bpm: data.bpm, spo2: data.spo2, temperature_c: data.temperature_c}, pred, false);
       }
 
       document.getElementById("jsonOutput").innerText = JSON.stringify(data, null, 2);
@@ -924,7 +572,6 @@ function stopEsp32Polling() {
 // Initial load
 window.onload = () => {
   loadPreset("100");
-  setTimeout(() => fetchAgentAnalysis(), 600);
 };
 </script>
 
